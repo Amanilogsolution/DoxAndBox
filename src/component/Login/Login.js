@@ -1,11 +1,10 @@
 import React from 'react'
 import './Login.css'
-import Image from './assets/whitelogo.png'
+import Image from '../../assets/whitelogo.png'
 function Login() {
 	return (
 		<>
 			<div className="container">
-
 				<div id="loginbox" className="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3" >
 			
 					<div className="row">
@@ -32,13 +31,10 @@ function Login() {
 								<div className="input-group">
 									<input id="password" type="password" className="form-control" name="password" placeholder="Password" />
 									<span className="input-group-addon"><i className="glyphicon glyphicon-lock" /></span>
-
 								</div>
-								<div className="form-group">
-									{/* Button */}
 								
+								<div className="form-group">								
 										<button type="submit" href="#" className="btn btn-primary pull-center"> Log in</button>
-								
 								</div>
 							</form>
 						</div>
