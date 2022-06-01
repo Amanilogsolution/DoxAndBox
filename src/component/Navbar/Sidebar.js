@@ -8,23 +8,47 @@ const SideBar = ({ openClass }) => {
       <ul className="navlist">
         <li>
           <a className="menu-item" href="/">
-            Home
+            <i class="material-icons">dashboard</i>
+            &nbsp;Dashboard
           </a>
         </li>
 
         <li>
-          <a className="menu-item" href="/burgers">
-            Burgers
+          <a className="menu-item" >
+            <i class="material-icons">list</i>
+            &nbsp;Physical Files
           </a>
+        </li>
+        <li>
+          <a className="menu-item" >
+
+            <i class="material-icons">arrow_forward_ios</i>
+            Request
+            <ul className="innerul">
+              <li>Record Pickup</li>
+              <li>Record Retrieval</li>
+              <li>Scanning Request</li>
+              <li>Shredding</li>
+              <li>Other Shredding</li>
+              <li>Other</li>
+            </ul>
+          </a>
+
         </li>
 
         <li>
-          <a className="menu-item" href="/pizzas">
-            Pizzas
+        <a className="menu-item" >
+
+        <i class="material-icons">arrow_forward_ios</i>
+          Reports
+          <ul className="innerul">
+            <li>Inward Report</li>
+            <li>Retrieval Report</li>
+            <li>Scanning Report</li>
+            <li>Stock Report</li>
+
+          </ul>
           </a>
-        </li>
-        <li>
-         
         </li>
       </ul>
     </nav>

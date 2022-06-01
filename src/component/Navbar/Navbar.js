@@ -22,23 +22,6 @@ function Navbar() {
         Account</div>
       </nav>
        <SideBar openClass={on} />
-
-
-
-
-      {/* <aside className={on ? 'to-right' : ''}>
-
-        
-        <a href="#" onClick={handleOn}>
-          Click
-        </a>
-
-        <h1>React Sidebar</h1>
-      </aside>
-      {on && <SideBar openClass="open" />}
- 
-        */}
-
     </div>
   )
 }

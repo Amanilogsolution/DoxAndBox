@@ -54,7 +54,7 @@ aside {
   left: 0;
   margin-top: 60px;
   transition: all 1s ease;
-
+  font-size: 2rem;
 }
 
 .closeslidernav {
@@ -64,22 +64,32 @@ aside {
 
 
 .navlist {
-  padding: 1rem 3rem;
+  padding: 5rem 4rem;
+  color: #fff;
+
 }
 
 .navlist li {
   list-style: none;
-  margin: 1rem 0;
+  margin: rem 0;
+  cursor: pointer;
 
 }
 
 .navlist li a {
   text-decoration: none;
   color: #fff;
-  font-size: 2rem;
+
 }
 
+.navlist li a i{
+  font-size: 1.8rem;
+  margin-top: 6px;
+}
+.navlist li ul {
+ display: none;
 
+}
 
 
 
