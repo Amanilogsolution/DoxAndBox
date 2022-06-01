@@ -4,7 +4,7 @@ import './navbar.css'
 
 const SideBar = ({ openClass }) => {
   return (
-    <nav className={openClass === 'open ' ? 'opneSidebar slidernav' : 'slidernav'}>
+    <nav className={openClass === true ? 'closeslidernav slidernav' : ' slidernav'}>
       <ul className="navlist">
         <li>
           <a className="menu-item" href="/">

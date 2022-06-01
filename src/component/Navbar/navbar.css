@@ -1,114 +1,86 @@
-.topnav{
+.topnav {
   height: 60px;
-  width:100%;
+  width: 100%;
   background: #000;
   display: flex;
   font-size: 20px;
   position: relative;
   color: #fff;
-  padding-top:15px;
-  
+  padding-top: 15px;
+
 }
-  
-.topnav .navicon{
+
+.topnav .navicon {
   position: absolute;
-  left: 10%;
+  left: 3%;
   margin-top: -5px;
-  /* border: 2px solid white; */
 }
-  
+
 aside {
-    font-size: 1.5rem;
-    transition: all 300ms ease-in-out;
-  }
-  
-.topnav .navlogo{
-  position: absolute;
-  left: 15%;
+  font-size: 1.5rem;
+  transition: all 300ms ease-in-out;
 }
-  
-.topnav .profilediv{
+
+.topnav .navlogo {
+  position: absolute;
+  left: 9%;
+}
+
+.topnav .profilediv {
   position: absolute;
   right: 5%;
   display: flex;
 
 }
-  
-.topnav .profilediv svg{
+
+.topnav .profilediv svg {
   margin-top: -8px;
 }
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 /* ###################  sidebar css ##########################*/
-  
+
+
 .slidernav {
-  background: #000;
-  color: #fff;
   height: 100%;
-  width: 200px;
+  width: 230px;
+  background: #000;
   position: fixed;
   top: 0;
   left: 0;
-  /* opacity: 0.9; */
   margin-top: 60px;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: 0.7s all ease-in-out;
-}
-  
-.slidernav .navlist li {
-    list-style: none;
-  }
-  
-  .slidernav .navlist li  a {
-    text-decoration: none;
-  }
-  
- 
- 
- 
-  
-  .opneSidebar {
-    transition: 0.7s;
-    width: 230px;
-  }
-  
-  #close {
-    font-size: 4.3rem;
-    position: absolute;
-    right: 2rem;
-    top: 1rem;
-  }
-  
-  .to-right {
-    margin-left: 220px;
-    margin-left: 250px;
-    transition: all 300ms ease-in-out;
-  }
-  
-  .slidernav .navlist {
-    padding: 1rem 3rem;
-  }
-  .slidernav .navlist li {
-    margin: 1rem 0;
-    transition: all 300ms ease-in-out;
-  }
-  .slidernav .navlist li a {
-    color: rgb(209, 15, 15);
-    font-size: 2rem;
-    transition: all 300ms ease-in-out;
-  }
-  
-  .slidernav.navlist li a:hover {
-    color: #2748b4;
-    padding: 0.3rem 0.2rem;
-    border-bottom: #2748b4 2px solid;
-    width: 50%;
-  }
-  
+  transition: all 1s ease;
 
- 
+}
+
+.closeslidernav {
+  left: -100%;
+}
+
+
+
+.navlist {
+  padding: 1rem 3rem;
+}
+
+.navlist li {
+  list-style: none;
+  margin: 1rem 0;
+
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+}
+
+
+
+
+
+
