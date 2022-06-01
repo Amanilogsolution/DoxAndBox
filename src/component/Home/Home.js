@@ -15,9 +15,7 @@ function Home() {
     <div>
         
         <aside className={on ? 'to-right' : ''}>
-           
-
-
+          
 
         <a href="#" onClick={handleOn}>
           Click

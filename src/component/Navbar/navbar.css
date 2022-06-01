@@ -1,0 +1,96 @@
+.topnav {
+  height: 60px;
+  width: 100%;
+  background: #000;
+  display: flex;
+  font-size: 20px;
+  position: relative;
+  color: #fff;
+  padding-top: 15px;
+
+}
+
+.topnav .navicon {
+  position: absolute;
+  left: 3%;
+  margin-top: -5px;
+}
+
+aside {
+  font-size: 1.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.topnav .navlogo {
+  position: absolute;
+  left: 9%;
+}
+
+.topnav .profilediv {
+  position: absolute;
+  right: 5%;
+  display: flex;
+
+}
+
+.topnav .profilediv svg {
+  margin-top: -8px;
+}
+
+
+
+
+
+
+/* ###################  sidebar css ##########################*/
+
+
+.slidernav {
+  height: 100%;
+  width: 230px;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 60px;
+  transition: all 1s ease;
+  font-size: 2rem;
+}
+
+.closeslidernav {
+  left: -100%;
+}
+
+
+
+.navlist {
+  padding: 5rem 4rem;
+  color: #fff;
+
+}
+
+.navlist li {
+  list-style: none;
+  margin: rem 0;
+  cursor: pointer;
+
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+.navlist li a i{
+  font-size: 1.8rem;
+  margin-top: 6px;
+}
+.navlist li ul {
+ display: none;
+
+}
+
+
+
+

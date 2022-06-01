@@ -1,97 +1,79 @@
-/* body {
-    background-color: rgb(0, 0, 0);
-} */
 
-#loginbox {
+.logincontainer{
+    height: 100vh;
+     width: 100%;
+      background: #000;
+}
+.logincontainer .container #loginbox {
     margin-top: 30px;
 }
 
-#loginbox > div:first-child {        
-    padding-bottom: 10px;    
+.logincontainer .container  #loginbox>div:first-child {
+    padding-bottom: 10px;
 }
 
-.iconmelon {
+.logincontainer .container  #loginbox .row .iconmelon {
     display: block;
     margin: 80px auto 10px auto;
     height: 150px;
     width: 150px;
 }
 
-.iconmelon img{
+.logincontainer .container  #loginbox .row .iconmelon img {
     height: 100%;
     width: 100%;
 }
 
-#form > div {
+#form>div {
     margin-bottom: 25px;
 }
 
-#form > div:last-child {
+#form>div:last-child {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.panel {    
+.logincontainer .container  #loginbox .panel {
     background-color: transparent;
 }
 
-.panel-body {
+.logincontainer .container  #loginbox .panel .panel-body {
     padding-top: 30px;
     background-color: #fff;
 }
 
-.panel-body .form-horizontal .input-group .form-control{
+.logincontainer .container  #loginbox .panel .panel-body .form-horizontal .input-group .form-control {
     height: 45px;
     border: none;
     color: #000;
     border-bottom: 2px solid #000;
     background: transparent;
 }
-.panel-body .form-horizontal .input-group .input-group-addon{
+
+.logincontainer .container  #loginbox .panel .panel-body .form-horizontal .input-group .input-group-addon {
     border: none;
     border-bottom: 2px solid #000;
     background: transparent;
 }
 
-.panel-body .form-horizontal .form-group .btn{
-padding:10px;
-width: 90px;
-font-size: 18px;
+.logincontainer .container  #loginbox .panel .panel-body .form-horizontal .form-group .btn {
+    padding: 10px;
+    width: 90px;
+    font-size: 18px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
-.bottomdiv{
+.logincontainer .container  #loginbox  .bottomdiv {
     height: 50px;
     width: 100%;
     color: #fff;
     display: flex;
-    /* border:2px solid white; */
     justify-content: space-between;
-
-    /* background: rgb(232, 26, 26); */
 }
 
-.bottomdiv p a{
+.logincontainer .container  #loginbox  .bottomdiv p a {
     text-decoration: none;
     color: #fff;
     font-size: 16px;
 }
-/* #particles {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    top: 0;                        
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    z-index: -2;
-} */
-
-/* .iconmelon {
-  position: relative;
-  width: 10px;
-  height: 150px;
-  display: block;
-  fill: #525151;
-} */
-
