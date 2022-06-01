@@ -32,8 +32,6 @@ function Home() {
                     <li>Button</li>
                     <li>Dox And Box</li>
                     <li>Account</li>
-
-
                 </ul>
             </nav>
       
