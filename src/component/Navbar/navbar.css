@@ -47,7 +47,7 @@ aside {
 
 .slidernav {
   height: 100%;
-  width: 230px;
+  width: 250px;
   background: #000;
   position: fixed;
   top: 0;
@@ -64,7 +64,7 @@ aside {
 
 
 .navlist {
-  padding: 5rem 4rem;
+  padding: 5rem 1rem 5rem 4rem;
   color: #fff;
 
 }
@@ -73,8 +73,13 @@ aside {
   list-style: none;
   margin: rem 0;
   cursor: pointer;
-
+  
 }
+.navlist li:hover  {
+  /* text-decoration: underline; */
+  color: rgb(0, 255, 200);
+}
+
 
 .navlist li a {
   text-decoration: none;
@@ -86,11 +91,10 @@ aside {
   font-size: 1.8rem;
   margin-top: 6px;
 }
-.navlist li ul {
- display: none;
 
+.navlist  #reportinnerdiv {
+padding-left: 14%;
 }
-
 
 
 
