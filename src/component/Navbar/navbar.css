@@ -30,6 +30,7 @@ aside {
   position: absolute;
   right: 5%;
   display: flex;
+  cursor: pointer;
 
 }
 
@@ -38,6 +39,45 @@ aside {
 }
 
 
+.topnav .profileactiondiv{
+  position:absolute;
+  right:10%;
+  top:50px;
+  background:#fff;
+  height:100px;
+  width:120px;
+  z-index:1000;
+  box-shadow:3px 3px 10px gray;
+  border-radius:10px;
+  color:#000;
+  padding:5px 0px 5px 0px;
+}
+
+.topnav .profileactiondiv ul{
+  /* border:2px solid red; */
+  height:100%;
+  padding:0;
+  font-size:18px;
+}
+.topnav .profileactiondiv ul li{
+  height:50%;
+  /* border:2px solid green; */
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+}
+
+.topnav .profileactiondiv ul li:hover{
+  background:rgba(0, 255, 200, 0.315);
+}
+@media screen and (max-width:600px){
+.topnav .navlogo {
+    display: none;
+}
+
+}
 
 
 
@@ -55,6 +95,7 @@ aside {
   margin-top: 60px;
   transition: all 1s ease;
   font-size: 2rem;
+  z-index: 1000;
 }
 
 .closeslidernav {
