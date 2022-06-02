@@ -6,6 +6,8 @@ const SideBar = ({ openClass }) => {
   const [recorddiv,setRecorddiv] =useState(false);
   const [reportdiv,setReportdiv] =useState(false);
 
+
+
   const handlerecord = ()=>{
     setRecorddiv(!recorddiv);
   }

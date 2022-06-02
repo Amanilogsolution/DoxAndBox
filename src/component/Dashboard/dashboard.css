@@ -1,0 +1,24 @@
+.dashboardcontainer .dashboardwrapper{
+    width:84%;
+    position:absolute;
+    right:0%;
+    top:0%;
+    margin-top:60px;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard{
+    width:100%;
+    position: relative;
+    margin-top:30px;
+    display: flex;
+
+}
+
+
+@media screen and (max-width:800px) {
+.dashboardcontainer .dashboardwrapper{
+    width: 100%;
+}
+}
+
+
