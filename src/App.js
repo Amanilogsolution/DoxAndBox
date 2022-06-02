@@ -7,6 +7,7 @@ import RecordRetrival from './component/Request/RecordRetrival/RecordRetrival';
 import ScanningRequest from './component/Request/ScanningRequest/ScanningRequest';
 import Shredding from './component/Request/Shredding/Shredding';
 import OtherRequest from './component/Request/Other/OtherRequest';
+import Profile from './component/Profile/Profile';
 // import PagenotFound from './component/Home/Home';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Router>
         <Routes>
                 <Route path="/" exact element={<Login/>}/>
+                <Route path="/Profile" exact element={<Profile/>}/>
                 <Route path="/Dashboard"   element={<Dashboard/>}/>
                 <Route path="/RecordPickup"   element={<RecordPickup/>}/>
                 <Route path="/RecordRetrival"   element={<RecordRetrival/>}/>
