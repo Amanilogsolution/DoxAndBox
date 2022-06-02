@@ -8,6 +8,9 @@ import ScanningRequest from './component/Request/ScanningRequest/ScanningRequest
 import Shredding from './component/Request/Shredding/Shredding';
 import OtherRequest from './component/Request/Other/OtherRequest';
 import ScanningReports from './component/Response/ScanningReports/ScanningReports';
+import InwardReports from './component/Response/InwardReports/InwardReports';
+import RetrivalReports from './component/Response/RetrivalReport/RetrivalReport';
+import StockReports from './component/Response/StockReports/StockReports';
 import Profile from './component/Profile/Profile';
 // import PagenotFound from './component/Home/Home';
 
@@ -25,6 +28,9 @@ function App() {
                 <Route path="/Shredding"   element={<Shredding/>}/>
                 <Route path="/OtherRequest"   element={<OtherRequest/>}/>
                 <Route path="/ScanningReports"   element={<ScanningReports/>}/>
+                <Route path="/InwardReports"   element={<InwardReports/>}/>
+                <Route path="/RetrivalReports"   element={<RetrivalReports/>}/>
+                <Route path="/StockReports"   element={<StockReports/>}/>
 
                 {/* <Route path="*"  exact component={PagenotFound}/> */}
                 </Routes>

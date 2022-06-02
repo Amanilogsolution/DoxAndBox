@@ -61,10 +61,10 @@ const SideBar = ({ openClass }) => {
         </li>
         {reportdiv ?
           <ul className="innerul" id='reportinnerdiv' >
-            <a href="#"> <li>Inward Report</li></a>
-            <a href="#"> <li>Retrieval Report</li></a>
-            <a href="#"> <li>Scanning Report</li></a>
-            <a href="#"> <li>Stock Report</li></a>
+            <a href="/InwardReports"> <li>Inward Report</li></a>
+            <a href="/RetrivalReports"> <li>Retrieval Report</li></a>
+            <a href="/ScanningReports"> <li>Scanning Report</li></a>
+            <a href="/StockReports"> <li>Stock Report</li></a>
           </ul>
           : null}
       </ul>

@@ -7,47 +7,43 @@ import Navbar from '../../Navbar/Navbar';
 
 const columns = [
     {
-      name: "Date of activity",
-      selector: row=>row.Dateofactivity,
+      name: "Allocate Date",
+      selector: row=>row.Allocatedate,
       sortable: true
     },
     {
-        name: "Department",
-        selector: row=>row.Department,
+        name: "File Number",
+        selector: row=>row.Fileno,
         sortable: true
       },
       {
-        name: "No of Customer Scan",
-        selector: row=>row.No_ofCustomerScan,
+        name: "Pickup Number",
+        selector: row=>row.pickupno,
         sortable: true
       },
       {
-        name: "No of Pages Scan",
-        selector: row=>row.Noof_filescan,
+        name: "Request Type",
+        selector: row=>row.requesttype,
         sortable: true
       },
       {
-        name: "No of Files Scan",
-        selector: row=>row.Noof_filescan,
-        sortable: true
-      },
-      {
-        name: "Warehouse",
-        selector: row=>row.WHname,
+        name: "Status",
+        selector: row=>row.Status,
         sortable: true
       }
+     
    
   ];
     
 
-function ScanningReports() {
+function RetrivalReport() {
     const [data, setData] = useState([]);
     
     useEffect(() => {
 
         async function fetchData() {
             // You can await here
-            const response = await rmsReports('Scanning',localStorage.getItem('CUST_ID'))
+            const response = await rmsReports('Retrival',localStorage.getItem('CUST_ID'))
             setData(response)
             console.log(response)
 
@@ -63,7 +59,7 @@ function ScanningReports() {
     <div className="InvoicesinProgress">
      <Navbar/>
     <div className="container " style={{marginRight:"100px"}}>
-      <h1 className="text-dark mn-3">Scanning Report</h1>
+      <h1 className="text-dark mn-3">Retrival Report</h1>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >
      <Datatable 
@@ -78,4 +74,4 @@ function ScanningReports() {
   )
 }
 
-export default ScanningReports
+export default RetrivalReport

@@ -7,47 +7,67 @@ import Navbar from '../../Navbar/Navbar';
 
 const columns = [
     {
-      name: "Date of activity",
-      selector: row=>row.Dateofactivity,
+      name: "Referance No",
+      selector: row=>row.ActivityReferenceNo,
       sortable: true
     },
     {
+        name: "Box No",
+        selector: row=>row.Boxno,
+        sortable: true
+      },
+      {
+        name: "Date of Activity",
+        selector: row=>row.Dateofactivity,
+        sortable: true
+      },
+      {
         name: "Department",
         selector: row=>row.Department,
         sortable: true
       },
       {
-        name: "No of Customer Scan",
-        selector: row=>row.No_ofCustomerScan,
+        name: "File Name",
+        selector: row=>row.Filename,
         sortable: true
       },
       {
-        name: "No of Pages Scan",
-        selector: row=>row.Noof_filescan,
+        name: "File UI DNO",
+        selector: row=>row.FileUIDno,
         sortable: true
       },
       {
-        name: "No of Files Scan",
-        selector: row=>row.Noof_filescan,
+        name: "Invoice",
+        selector: row=>row.Invoice_no,
+        sortable: true
+      },
+      {
+        name: "Location",
+        selector: row=>row.ItemLocation,
         sortable: true
       },
       {
         name: "Warehouse",
-        selector: row=>row.WHname,
+        selector: row=>row.Location,
+        sortable: true
+      },
+      {
+        name: "Mode",
+        selector: row=>row.Mode,
         sortable: true
       }
    
   ];
     
 
-function ScanningReports() {
+function InwardReports() {
     const [data, setData] = useState([]);
     
     useEffect(() => {
 
         async function fetchData() {
             // You can await here
-            const response = await rmsReports('Scanning',localStorage.getItem('CUST_ID'))
+            const response = await rmsReports('Inward',localStorage.getItem('CUST_ID'))
             setData(response)
             console.log(response)
 
@@ -63,7 +83,7 @@ function ScanningReports() {
     <div className="InvoicesinProgress">
      <Navbar/>
     <div className="container " style={{marginRight:"100px"}}>
-      <h1 className="text-dark mn-3">Scanning Report</h1>
+      <h1 className="text-dark mn-3">Inward Report</h1>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >
      <Datatable 
@@ -78,4 +98,4 @@ function ScanningReports() {
   )
 }
 
-export default ScanningReports
+export default InwardReports

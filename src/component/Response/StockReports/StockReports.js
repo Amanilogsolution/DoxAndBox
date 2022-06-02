@@ -7,28 +7,43 @@ import Navbar from '../../Navbar/Navbar';
 
 const columns = [
     {
-      name: "Date of activity",
-      selector: row=>row.Dateofactivity,
+      name: "Box Number",
+      selector: row=>row.boxno,
       sortable: true
     },
     {
         name: "Department",
-        selector: row=>row.Department,
+        selector: row=>row.department,
         sortable: true
       },
       {
-        name: "No of Customer Scan",
-        selector: row=>row.No_ofCustomerScan,
+        name: "DESCN No",
+        selector: row=>row.DESCN,
         sortable: true
       },
       {
-        name: "No of Pages Scan",
-        selector: row=>row.Noof_filescan,
+        name: "File no.",
+        selector: row=>row.fileno,
         sortable: true
       },
       {
-        name: "No of Files Scan",
-        selector: row=>row.Noof_filescan,
+        name: "Invoice",
+        selector: row=>row.INVOICENO,
+        sortable: true
+      },
+      {
+        name: "Item Location",
+        selector: row=>row.ItemLocation,
+        sortable: true
+      },
+      {
+        name: "Pickup Number",
+        selector: row=>row.PICKUPNO,
+        sortable: true
+      },
+      {
+        name: "Remarks",
+        selector: row=>row.Remark1,
         sortable: true
       },
       {
@@ -36,18 +51,18 @@ const columns = [
         selector: row=>row.WHname,
         sortable: true
       }
+    
    
   ];
     
 
-function ScanningReports() {
+function StockReports() {
     const [data, setData] = useState([]);
     
     useEffect(() => {
 
         async function fetchData() {
-            // You can await here
-            const response = await rmsReports('Scanning',localStorage.getItem('CUST_ID'))
+            const response = await rmsReports('Stock',localStorage.getItem('CUST_ID'))
             setData(response)
             console.log(response)
 
@@ -63,7 +78,7 @@ function ScanningReports() {
     <div className="InvoicesinProgress">
      <Navbar/>
     <div className="container " style={{marginRight:"100px"}}>
-      <h1 className="text-dark mn-3">Scanning Report</h1>
+      <h1 className="text-dark mn-3">Stock Report</h1>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >
      <Datatable 
@@ -78,4 +93,4 @@ function ScanningReports() {
   )
 }
 
-export default ScanningReports
+export default StockReports
