@@ -20,10 +20,12 @@ function Shredding() {
 
                     <div className="col " style={{ margin: "100px auto", width: "600px" }}>
                         <div className="card" >
-                            <header className="card-header">
+                            {/* <header className="card-header">
                                 <h4 className="card-title mt-2">Shredding Request</h4>
-                            </header>
-                            <article className="card-body">
+                            </header> */}
+                            <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
+                        <h3 className="card-title mt-2">Shredding Request</h3><br/>
+
                                 <form>
                                     <div className="radio">
                                         <label>
@@ -65,8 +67,8 @@ function Shredding() {
                                     </div>
 
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-primary mr-4">Submit</button>
-                                        <button type="submit" className="btn btn-secondary ">Reset</button>
+                                        <button type="submit" className="btn btn-primary  float-right">Submit</button>
+                                        <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
                                     </div>
                                 </form>
                             </article>

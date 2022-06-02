@@ -3,16 +3,16 @@ import './navbar.css'
 
 
 const SideBar = ({ openClass }) => {
-  const [recorddiv,setRecorddiv] =useState(false);
-  const [reportdiv,setReportdiv] =useState(false);
+  const [recorddiv, setRecorddiv] = useState(false);
+  const [reportdiv, setReportdiv] = useState(false);
 
 
 
-  const handlerecord = ()=>{
+  const handlerecord = () => {
     setRecorddiv(!recorddiv);
   }
 
-  const handlereport = ()=>{
+  const handlereport = () => {
     setReportdiv(!reportdiv);
   }
   return (
@@ -26,47 +26,47 @@ const SideBar = ({ openClass }) => {
         </li>
 
         <li>
-          <a className="menu-item" >
+          <a className="menu-item" href='#'>
             <i class="material-icons">list</i>
             &nbsp;Physical Files
           </a>
         </li>
         <li>
-          <a className="menu-item" >
+          <a className="menu-item" href="#">
 
             <i class="material-icons">arrow_forward_ios</i>
             <span onClick={handlerecord}>Request</span>
 
-           
+
           </a>
 
         </li>
         {recorddiv ?
-            <ul className="innerul" id='reportinnerdiv'  >
-              <a href='/RecordPickup'><li>Record Pickup</li></a>
-             <a href='/RecordRetrival'><li>Record Retrieval</li></a>
-             <a href='/ScanningRequest'> <li>Scanning Request</li></a>
-             <a href='/Shredding'> <li>Shredding</li></a>
-             <a href='/OtherRequest'>  <li>Other</li></a>
-            </ul>
-            :null}
+          <ul className="innerul" id='reportinnerdiv'  >
+            <a href='/RecordPickup'><li>Record Pickup</li></a>
+            <a href='/RecordRetrival'><li>Record Retrieval</li></a>
+            <a href='/ScanningRequest'> <li>Scanning Request</li></a>
+            <a href='/Shredding'> <li>Shredding</li></a>
+            <a href='/OtherRequest'>  <li>Other</li></a>
+          </ul>
+          : null}
 
         <li>
-          <a className="menu-item" >
+          <a className="menu-item" href='#' >
 
-          <span onClick={handlereport}><i class="material-icons">arrow_forward_ios</i>
-            Reports</span>
-          
+            <span onClick={handlereport}><i class="material-icons">arrow_forward_ios</i>
+              Reports</span>
+
           </a>
         </li>
         {reportdiv ?
-            <ul className="innerul" id='reportinnerdiv' >
-              <li>Inward Report</li>
-              <li>Retrieval Report</li>
-              <li>Scanning Report</li>
-              <li>Stock Report</li>
-            </ul>
-            :null}
+          <ul className="innerul" id='reportinnerdiv' >
+            <a href="#"> <li>Inward Report</li></a>
+            <a href="#"> <li>Retrieval Report</li></a>
+            <a href="#"> <li>Scanning Report</li></a>
+            <a href="#"> <li>Stock Report</li></a>
+          </ul>
+          : null}
       </ul>
     </nav>
   );
