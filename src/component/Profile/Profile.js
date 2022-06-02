@@ -8,10 +8,11 @@ const Profile = () => {
                 <div>
 
                     <div className="col " style={{ margin: "20px auto", width: "600px" }}>
+                    <div style={{display:"flex",flexDirection:"row-reverse",paddingRight:"15px"}}>
+                        <h5>Member Since:-</h5>
+                    </div>
                         <div className="card" >
-                            {/* <header className="card-header">
-                        <h4 className="card-title mt-2">Request for record pickup</h4>
-                    </header> */}
+                         
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
                                 <form autoComplete="off">
                                     <h3 className="card-title mt-2">Contact Information</h3><br />
@@ -67,7 +68,7 @@ const Profile = () => {
                                    
 
                                     <div className="form-group" >
-                                        <button type="submit" className="btn btn-primary  float-right">Submit</button>
+                                        <button type="submit" className="btn btn-primary  float-right">Update</button>
                                         <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
                                     </div>
                                 </form>
