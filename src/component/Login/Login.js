@@ -11,7 +11,11 @@ function Login() {
 		const uid_pass = document.getElementById('password').value
 			console.log(uid_id,uid_pass)
 		const result = await UserLogin(uid_id,uid_pass)
-		console.log(result)
+		if(result){
+			window.location.href = '/Dashboard'
+			localStorage.setItem('CUST_ID',result.CUST_ID)
+		}
+		
 	}
 	return (
 		<>

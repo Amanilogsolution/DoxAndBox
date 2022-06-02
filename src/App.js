@@ -7,6 +7,7 @@ import RecordRetrival from './component/Request/RecordRetrival/RecordRetrival';
 import ScanningRequest from './component/Request/ScanningRequest/ScanningRequest';
 import Shredding from './component/Request/Shredding/Shredding';
 import OtherRequest from './component/Request/Other/OtherRequest';
+import ScanningReports from './component/Response/ScanningReports/ScanningReports';
 // import PagenotFound from './component/Home/Home';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/ScanningRequest"   element={<ScanningRequest/>}/>
                 <Route path="/Shredding"   element={<Shredding/>}/>
                 <Route path="/OtherRequest"   element={<OtherRequest/>}/>
+                <Route path="/ScanningReports"   element={<ScanningReports/>}/>
 
                 {/* <Route path="*"  exact component={PagenotFound}/> */}
                 </Routes>
