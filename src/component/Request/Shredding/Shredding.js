@@ -21,7 +21,7 @@ function Shredding() {
                     <div className="col " style={{ margin: "100px auto", width: "600px" }}>
                         <div className="card" >
                             <header className="card-header">
-                                <h4 className="card-title mt-2">Request for Scaning</h4>
+                                <h4 className="card-title mt-2">Shredding Request</h4>
                             </header>
                             <article className="card-body">
                                 <form>

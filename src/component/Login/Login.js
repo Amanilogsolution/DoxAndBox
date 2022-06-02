@@ -1,7 +1,18 @@
 import React from 'react'
 import './Login.css'
 import Image from '../../assets/whitelogo.png'
+import {UserLogin} from '../../api/index'
+
+
 function Login() {
+	const handleClick = async(e) => {
+		e.preventDefault()
+		const uid_id = document.getElementById('user').value
+		const uid_pass = document.getElementById('password').value
+			console.log(uid_id,uid_pass)
+		const result = await UserLogin(uid_id,uid_pass)
+		console.log(result)
+	}
 	return (
 		<>
 			<div className="logincontainer">
@@ -28,7 +39,7 @@ function Login() {
 											<span className="input-group-addon"><i className="glyphicon glyphicon-lock" /></span>
 										</div>
 										<div className="form-group">
-											<button type="submit" href="#" className="btn btn-primary"> Log in</button>
+											<button type="submit" onClick={handleClick} className="btn btn-primary"> Log in</button>
 										</div>
 									</form>
 								</div>

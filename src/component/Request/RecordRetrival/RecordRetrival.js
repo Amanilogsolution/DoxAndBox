@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from '../../Navbar/Navbar'
+import SelectSearch, { fuzzySearch } from "react-select-search";
+import './RecordRetrival.css'
 
 
 function RecordRetrival() {
@@ -18,7 +20,14 @@ function RecordRetrival() {
                         <form>
                             <div className="form-group">
                                 <label>Search Select Files *</label>
-                                <input placeholder="Location, City & PIN etc" type="Text" className="form-control" id='visitor_name' />
+                                <SelectSearch
+        //   options={options}
+        //   value={value}
+        //   onChange={setValue}
+          search
+          filterOptions={fuzzySearch}
+          placeholder="Search something"
+        />
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-4" >
