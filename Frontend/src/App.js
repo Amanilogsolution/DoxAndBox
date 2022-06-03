@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Login from './component/Login/Login';
 import Dashboard from './component/Dashboard/Dashboard';
 import RecordPickup from './component/Request/RecordPickup/RecordPickup';
@@ -12,28 +12,29 @@ import InwardReports from './component/Response/InwardReports/InwardReports';
 import RetrivalReports from './component/Response/RetrivalReport/RetrivalReport';
 import StockReports from './component/Response/StockReports/StockReports';
 import Profile from './component/Profile/Profile';
+import PrivatRoute from './component/HOC/PrivateRoute';
 // import PagenotFound from './component/Home/Home';
 
 function App() {
   return (
     <>
         <Router>
-        <Routes>
-                <Route path="/" exact element={<Login/>}/>
-                <Route path="/Profile" exact element={<Profile/>}/>
-                <Route path="/Dashboard"   element={<Dashboard/>}/>
-                <Route path="/RecordPickup"   element={<RecordPickup/>}/>
-                <Route path="/RecordRetrival"   element={<RecordRetrival/>}/>
-                <Route path="/ScanningRequest"   element={<ScanningRequest/>}/>
-                <Route path="/Shredding"   element={<Shredding/>}/>
-                <Route path="/OtherRequest"   element={<OtherRequest/>}/>
-                <Route path="/ScanningReports"   element={<ScanningReports/>}/>
-                <Route path="/InwardReports"   element={<InwardReports/>}/>
-                <Route path="/RetrivalReports"   element={<RetrivalReports/>}/>
-                <Route path="/StockReports"   element={<StockReports/>}/>
+   
+                <Route path="/" exact component={Login}/>
+                <PrivatRoute path="/Profile" exact component={Profile}/>
+                <PrivatRoute path="/Dashboard"   component={Dashboard}/>
+                <PrivatRoute path="/RecordPickup"   component={RecordPickup}/>
+                <PrivatRoute path="/RecordRetrival"  component={RecordRetrival}/>
+                <PrivatRoute path="/ScanningRequest"   component={ScanningRequest}/>
+                <PrivatRoute path="/Shredding"   component={Shredding}/>
+                <PrivatRoute path="/OtherRequest"   component={OtherRequest}/>
+                <PrivatRoute path="/ScanningReports"   component={ScanningReports}/>
+                <PrivatRoute path="/InwardReports"   component={InwardReports}/>
+                <PrivatRoute path="/RetrivalReports"   component={RetrivalReports}/>
+                <PrivatRoute path="/StockReports"   component={StockReports}/>
 
                 {/* <Route path="*"  exact component={PagenotFound}/> */}
-                </Routes>
+             
         </Router>
     </>
   );
