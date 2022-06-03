@@ -5,10 +5,14 @@ import {rmsRequest} from '../../../api/index'
 function RecordPickup() {
     const handleClick = async(e) => {
         e.preventDefault();
-        const Location = document.getElementById('Location').value;
-        const nooffiles = document.getElementById('nooffiles').value;
-        const result = await rmsRequest()
+        const location = document.getElementById('Location').value;
+        const noof_files = document.getElementById('nooffiles').value;
+        const request_date = document.getElementById('Pickupdate').value;
+        const request_time = document.getElementById('pickuptime').value;
+        const remark = document.getElementById('remark').value;
+        const result = await rmsRequest('RecordPickup',location,noof_files,request_date,request_time,'','','','','','',remark,localStorage.getItem('CUST_ID'))
         console.log(result)
+       
     }
 
   return (

@@ -1,6 +1,17 @@
+import React,{useEffect,useState} from "react";
 import Navbar from "../Navbar/Navbar";
+import { ProfileDetails } from "../../api";
 
 const Profile = () => {
+    const [profile, setProfile] = useState({});
+    useEffect(() => {
+        const profile = async () => {
+            const data = await ProfileDetails(localStorage.getItem("CUST_ID"));
+            console.log(data);
+            setProfile(data);
+        }
+        profile();
+    }, []);
     return (
         <>
             <div className="Profilediv">
@@ -9,7 +20,7 @@ const Profile = () => {
 
                     <div className="col " style={{ margin: "20px auto", width: "600px" }}>
                     <div style={{display:"flex",flexDirection:"row-reverse",paddingRight:"15px"}}>
-                        <h5>Member Since:-</h5>
+                        <h5>Member Since:- {profile.custdoe}</h5>
                     </div>
                         <div className="card" >
                          
@@ -19,48 +30,48 @@ const Profile = () => {
 
                                     <div className="form-group">
                                         <label>Name *</label>
-                                        <input type="Text" className="form-control" id='name' />
+                                        <input type="Text" className="form-control" value={profile.custname} id='name' />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Email </label>
-                                            <input type="email" className="form-control" id="email" />
+                                            <input type="email" className="form-control" value={profile.custemail} id="email" />
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Mobile </label>
-                                            <input type="number" className="form-control" id="mobile" />
+                                            <input type="number" className="form-control"value={profile.custcontactno} id="mobile" />
                                         </div>
                                     </div>
                                     <h4 className="card-title mt-2">Address</h4><br />
                                     <div className="form-group">
                                         <label>Address 1 </label>
-                                        <input type="Text" className="form-control" id='address1' />
+                                        <input type="Text" className="form-control" value={profile.custadd} id='address1' />
                                     </div>
                                     <div className="form-group">
                                         <label>Address 2</label>
-                                        <input type="Text" className="form-control" id='address2' />
+                                        <input type="Text" className="form-control" value={profile.custadd1} id='address2' />
                                     </div>
 
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
-                                            <label>Landmark</label>
-                                            <input type="text" className="form-control" id='landmark' />
+                                            <label>Country</label>
+                                            <input type="text" className="form-control" value={profile.custcountry} id='country' />
                                         </div>
                                         <div className="form-group col-md-6">
-                                            <label>City</label>
-                                            <input type="text" className="form-control" id='city'
+                                            <label>State</label>
+                                            <input type="text" className="form-control" value={profile.custstate} id='city'
                                             />
 
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
-                                            <label>State</label>
-                                            <input type="text" className="form-control" id='state' />
+                                            <label>City</label>
+                                            <input type="text" className="form-control" value={profile.custcity} id='state' />
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Pincode </label>
-                                            <input type="number" className="form-control" id='pincode'/>
+                                            <input type="number" className="form-control" value={profile.custpin} id='pincode'/>
 
                                         </div>
                                     </div>

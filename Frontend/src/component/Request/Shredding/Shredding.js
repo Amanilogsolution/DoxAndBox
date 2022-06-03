@@ -1,7 +1,20 @@
 import React from 'react'
-import Navbar from '../../Navbar/Navbar'
+import Navbar from '../../Navbar/Navbar';
+import {rmsRequest} from '../../../api/index'
 
 function Shredding() {
+
+    const handleClick = async(e) => {
+        e.preventDefault();
+        const file_name = document.getElementById('file_name').value;
+        const noof_pages = document.getElementById('noofpages').value;
+        const request_date = document.getElementById('dateofShreading').value;
+        const onsite = document.getElementById('onSite').value;
+        const remark = document.getElementById('remark').value;
+
+        const result = await rmsRequest('ShreddingRequest','','',request_date,'',file_name,'','',noof_pages,onsite,'',remark,localStorage.getItem('CUST_ID'));
+        console.log(result)
+    }
 
     const handlelessthan = () => {
         document.getElementById('PagesToBeShred').style.display = "none"
@@ -40,20 +53,20 @@ function Shredding() {
 
                                     <div className="form-group" id="Search&Select">
                                         <label>Search *</label>
-                                        <input type="number" className="form-control" id='visitor_name' />
+                                        <input type="number" className="form-control" id='file_name' />
                                     </div>
                                     <div className="form-group" id="PagesToBeShred" style={{ display: "none" }}>
                                         <label>Shread *</label>
-                                        <input type="number" className="form-control" id='visitor_name' />
+                                        <input type="number" className="form-control" id='noofpages' />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6" >
                                             <label>Date Of Shredding *</label>
-                                            <input type="date" className="form-control" id='no_of_visitor' />
+                                            <input type="date" className="form-control" id='dateofShreading' />
                                         </div>
                                         <div className="form-group col-md-6" >
                                             <label>On Site Shredding *</label>
-                                            <select className="form-control" id='meeting_with' style={{ height: "32px" }}>
+                                            <select className="form-control" id='onSite' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
@@ -67,7 +80,7 @@ function Shredding() {
                                     </div>
 
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-primary  float-right">Submit</button>
+                                    <button type="submit" className="btn btn-primary float-right" onClick={handleClick}>Submit</button>
                                         <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
                                     </div>
                                 </form>

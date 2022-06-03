@@ -5,6 +5,12 @@ import './navbar.css';
 function Navbar() {
   const [on, setOn] = React.useState(false);
   const [profilecard, setProfilecard] = React.useState(false);
+
+  const handleClick = ()=>{
+    window.location.href='/'
+    localStorage.clear();
+  }
+
   const handleOn = () => {
     setOn(!on);
   };
@@ -27,7 +33,7 @@ function Navbar() {
       <div className='profileactiondiv' >
           <ul>
            <a href='/Profile'> <li>Profile</li></a>
-           <a href='#'> <li>Logout</li></a>
+           <a onClick={handleClick}> <li>Logout</li></a>
           </ul>
         </div>
         : null
