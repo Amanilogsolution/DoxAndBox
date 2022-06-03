@@ -4,6 +4,7 @@ import DataTableExtensions from 'react-data-table-component-extensions';
 import 'react-data-table-component-extensions/dist/index.css';
 import {rmsReports} from '../../../api/index';
 import Navbar from '../../Navbar/Navbar';
+import '../response.css';
 
 const columns = [
     {
@@ -58,8 +59,8 @@ function RetrivalReport() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
-    <div className="container " style={{marginRight:"100px"}}>
-      <h1 className="text-dark mn-3">Retrival Report</h1>
+    <div className="container reportdata" style={{marginRight:"0px"}}>
+      <h4 className="text-dark mn-3">Retrival Report</h4>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >
      <Datatable 

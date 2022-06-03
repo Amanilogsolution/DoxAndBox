@@ -3,12 +3,14 @@
 .topnav {
   height: 60px;
   width: 100%;
-  background: #000;
+  background: white;
   display: flex;
   font-size: 20px;
   position: relative;
-  color: #fff;
+  color: #000;
   padding-top: 15px;
+  box-shadow: 2px 2px 5px gray;
+
 
 }
 
@@ -76,7 +78,7 @@ aside {
 }
 
 .topnav .profileactiondiv ul li:hover {
-  background: rgba(0, 255, 200, 0.315);
+  background: rgba(0, 89, 255,0.315);
 }
 
 @media screen and (max-width:600px) {
@@ -96,14 +98,15 @@ aside {
 .slidernav {
   height: 100%;
   width: 250px;
-  background: #000;
+  background: #fff;
   position: absolute;
   top: 0;
   left: 0;
-  margin-top: 60px;
+  margin-top: 61px;
   transition: all 1s ease;
   font-size: 2rem;
   z-index: 1000;
+  box-shadow: 2px 2px 5px gray;
 }
 
 .closeslidernav {
@@ -114,7 +117,7 @@ aside {
 
 .navlist {
   padding: 5rem 1rem 5rem 4rem;
-  color: #fff;
+  color: #000;
 
 }
 
@@ -126,16 +129,20 @@ aside {
 }
 
 .navlist li a:hover {
-  color: rgb(0, 255, 200);
+  color: rgb(0, 89, 255);
+  ;
 }
 
 
 .navlist li a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
 
 }
 
+.navlist ul{
+  border-top: 1px solid gray;
+}
 .navlist ul a {
   text-decoration: none;
 
@@ -151,7 +158,8 @@ aside {
 }
 
 .navlist ul a:hover {
-  color: rgb(0, 255, 200);
+  color: rgb(0, 89, 255);
+  text-decoration: underline;
 }
 
 /* ###################  sidebar css End ##########################*/
