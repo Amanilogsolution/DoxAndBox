@@ -59,7 +59,7 @@ function RetrivalReport() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
-    <div className="container reportdata" style={{marginRight:"0px"}}>
+    <div className="container reportdata" >
       <h4 className="text-dark mn-3">Retrival Report</h4>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >
