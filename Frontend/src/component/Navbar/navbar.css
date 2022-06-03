@@ -4,7 +4,6 @@
   height: 60px;
   width: 100%;
   background: white;
-  /* border-bottom: 1px solid gray; */
   display: flex;
   font-size: 20px;
   position: relative;
@@ -100,7 +99,6 @@ aside {
   height: 100%;
   width: 250px;
   background: #fff;
-  /* border-right: 1px solid gray; */
   position: absolute;
   top: 0;
   left: 0;
