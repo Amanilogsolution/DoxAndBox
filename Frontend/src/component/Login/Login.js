@@ -51,13 +51,14 @@ function Login() {
 
 							<div className="bottomdiv">
 								<p> <a href='#'>forget password ?</a></p>
-								<p><a href="#">Register</a></p>
+								{/* <p><a href="#">Register</a></p> */}
 							</div>
 						</div>
 					</div>
 					<div>
 					</div>
-				</div></div>
+				</div>
+				</div>
 		</>
 
 	)

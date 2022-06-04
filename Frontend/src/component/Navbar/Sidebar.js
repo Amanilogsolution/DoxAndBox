@@ -28,7 +28,7 @@ const SideBar = ({ openClass }) => {
         <li>
           <a className="menu-item" href='#'>
             <i class="material-icons">list</i>
-            &nbsp;Physical Files
+            &nbsp;Digital Files
           </a>
         </li>
         <li>

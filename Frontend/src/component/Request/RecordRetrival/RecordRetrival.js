@@ -2,8 +2,13 @@ import React from 'react'
 import Navbar from '../../Navbar/Navbar'
 import './RecordRetrival.css';
 import {rmsRequest} from '../../../api/index'
+ import Select from 'react-select';
 
-
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
 
 function RecordRetrival() {
 
@@ -19,6 +24,10 @@ function RecordRetrival() {
         console.log(result)
     }
 
+    const handleChange = (selectedOption) => {
+        console.log(selectedOption)
+    }
+
 
 
 
@@ -30,16 +39,19 @@ function RecordRetrival() {
 
                     <div className="col " style={{ margin: "100px auto", width: "600px" }}>
                         <div className="card" >
-                            <header className="card-header">
-                                <h4 className="card-title mt-2">Record Retrival</h4>
-                            </header>
+                         
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
                                 <form>
                                     <h3 className="card-title mt-2">Record Retrival</h3><br />
 
                                     <div className="form-group">
                                         <label>Search Select Files *</label>
-                                        <input placeholder="Files" type="Text" className="form-control" id='filename' />
+                                        {/* <input placeholder="Files" type="Text" className="form-control" id='filename' /> */}
+                                        <Select 
+                                        options={options}
+                                        isMulti={true}
+                                        onChange={handleChange} 
+                                        />
 
                                     </div>
                                     <div className="form-row">

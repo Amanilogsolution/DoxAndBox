@@ -30,58 +30,57 @@ const Profile = () => {
 
                                     <div className="form-group">
                                         <label>Name *</label>
-                                        <input type="Text" className="form-control" value={profile.custname} id='name' />
+                                        <input type="Text" className="form-control" value={profile.custname} disabled readonly  id='name' />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Email </label>
-                                            <input type="email" className="form-control" value={profile.custemail} id="email" />
+                                            <input type="email" className="form-control" value={profile.custemail} id="email" disabled readonly/>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Mobile </label>
-                                            <input type="number" className="form-control"value={profile.custcontactno} id="mobile" />
+                                            <input type="number" className="form-control"value={profile.custcontactno} id="mobile"disabled readonly />
                                         </div>
                                     </div>
                                     <h4 className="card-title mt-2">Address</h4><br />
                                     <div className="form-group">
                                         <label>Address 1 </label>
-                                        <input type="Text" className="form-control" value={profile.custadd} id='address1' />
+                                        <input type="Text" className="form-control" value={profile.custadd} id='address1' disabled readonly/>
                                     </div>
                                     <div className="form-group">
                                         <label>Address 2</label>
-                                        <input type="Text" className="form-control" value={profile.custadd1} id='address2' />
+                                        <input type="Text" className="form-control" value={profile.custadd1} id='address2' disabled readonly />
                                     </div>
 
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Country</label>
-                                            <input type="text" className="form-control" value={profile.custcountry} id='country' />
+                                            <input type="text" className="form-control" value={profile.custcountry} id='country'disabled readonly />
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>State</label>
-                                            <input type="text" className="form-control" value={profile.custstate} id='city'
-                                            />
+                                            <input type="text" className="form-control" value={profile.custstate} id='city' disabled readonly />
 
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>City</label>
-                                            <input type="text" className="form-control" value={profile.custcity} id='state' />
+                                            <input type="text" className="form-control" value={profile.custcity} id='state' disabled readonly/>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Pincode </label>
-                                            <input type="number" className="form-control" value={profile.custpin} id='pincode'/>
+                                            <input type="number" className="form-control" value={profile.custpin} id='pincode'disabled readonly/>
 
                                         </div>
                                     </div>
 
                                    
 
-                                    <div className="form-group" >
+                                    {/* <div className="form-group" >
                                         <button type="submit" className="btn btn-primary  float-right">Update</button>
                                         <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
-                                    </div>
+                                    </div> */}
                                 </form>
                             </article>
                         </div>
