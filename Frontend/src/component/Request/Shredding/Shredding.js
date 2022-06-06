@@ -1,6 +1,13 @@
 import React from 'react'
 import Navbar from '../../Navbar/Navbar';
 import {rmsRequest} from '../../../api/index'
+import Select from 'react-select';
+
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
 
 function Shredding() {
 
@@ -43,20 +50,25 @@ function Shredding() {
                                     <div className="radio">
                                         <label>
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked onClick={handlelessthan} />
-                                            Option1
+                                            less than 10
                                         </label>
+                                        &nbsp;&nbsp;
                                         <label>
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2" onClick={handlemorethan} />
-                                            Option2
+                                          more than 10
                                         </label>
                                     </div>
 
                                     <div className="form-group" id="Search&Select">
                                         <label>Search *</label>
-                                        <input type="number" className="form-control" id='file_name' />
-                                    </div>
+                                        <Select 
+                                        options={options}
+                                        isMulti={true}
+                                        // onChange={handleChange} 
+                                        />                                    
+                                        </div>
                                     <div className="form-group" id="PagesToBeShred" style={{ display: "none" }}>
-                                        <label>Shread *</label>
+                                        <label>Shredd *</label>
                                         <input type="number" className="form-control" id='noofpages' />
                                     </div>
                                     <div className="form-row">
