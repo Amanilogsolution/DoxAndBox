@@ -1,25 +1,71 @@
-.dashboardcontainer .dashboardwrapper{
-    width:80%;
-    position:absolute;
-    right:0%;
-    top:0%;
-    margin-top:60px;
+.dashboardcontainer .dashboardwrapper {
+    width: 80%;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    margin-top: 60px;
     /* border: 2px solid red;    */
 }
 
-.dashboardcontainer .dashboardwrapper .dashboardstatuscard{
-    width:100%;
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard {
+    width: 100%;
     position: relative;
-    margin-top:30px;
+    margin-top: 30px;
     display: flex;
 
 }
 
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body :nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body :nth-child(4) {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body .card-subtitle i {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body .helpcont {
+    position: absolute;
+    bottom: -8px;
+    left: -12px;
+    background: #333;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+} 
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body .helpcont2 {
+    position: absolute;
+    bottom: -20px;
+    left: -12px;
+    background: #333;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+} 
+
+/* .sechelp :hover {
+    color: #333;
+    border:2px solid rgb(51, 255, 0);
+} */
+
+/* .dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body .helpicon1 :hover 
+{
+     display:flex;
+     border:2px solid red;
+}  */
+
 
 @media screen and (max-width:800px) {
-.dashboardcontainer .dashboardwrapper{
-    width: 100%;
+    .dashboardcontainer .dashboardwrapper {
+        width: 100%;
+    }
 }
-}
-
-
