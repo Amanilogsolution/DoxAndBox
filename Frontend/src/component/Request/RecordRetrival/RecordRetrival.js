@@ -1,36 +1,56 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Navbar from '../../Navbar/Navbar'
 import './RecordRetrival.css';
-import {rmsRequest} from '../../../api/index'
+import {rmsRequest,ReportData} from '../../../api/index'
  import Select from 'react-select';
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
 
 function RecordRetrival() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
+    const [data,setData] = useState([]);
+    const [selectfiles,setSelectFiles] = useState([]);
+
+
+    useEffect(() => {
+    const data = async() => {
+        const result = await ReportData(localStorage.getItem('CUST_ID'))
+        console.log(result)
+        setData(result)
+    }
+    data()
+    },[])
+
+    let options = data.map((ele)=>{
+        return{value:ele.fileno,label:ele.fileno};
+    })
 
     const handleClick = async(e) => {
         e.preventDefault();
-        const file_name = document.getElementById('filename').value;
+        // const file_name = document.getElementById('filename').value;
         const retrival_type = document.getElementById('typeOfRetrival').value;
         const delivery_type = document.getElementById('deliverytype').value;
         const request_date = document.getElementById('deliverydate').value;
         const remark = document.getElementById('remark').value;
-        if( !file_name || !retrival_type || !delivery_type || !request_date ){
+        if( !retrival_type || !delivery_type || !request_date ){
             setMandatoryfield(true)
         }
         else{
-        const result = await rmsRequest('RecorRetrival','','',request_date,'',file_name,retrival_type,delivery_type,'','','',remark,localStorage.getItem('CUST_ID'))
-        console.log(result)
+
+
+            selectfiles.forEach(async(datas)=>{
+                const file_name  = datas.value
+
+               const result =   await rmsRequest('RecorRetrival','','',request_date,'',file_name,retrival_type,delivery_type,'','','',remark,localStorage.getItem('CUST_ID'))
+                
+               
+            })
+            window.location.href='/Dashboard'
+
         }
     }
 
     const handleChange = (selectedOption) => {
-        console.log(selectedOption)
+        setSelectFiles(selectedOption)
     }
 
 

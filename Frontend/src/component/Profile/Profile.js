@@ -7,7 +7,6 @@ const Profile = () => {
     useEffect(() => {
         const profile = async () => {
             const data = await ProfileDetails(localStorage.getItem("CUST_ID"));
-            console.log(data);
             setProfile(data);
         }
         profile();
@@ -23,54 +22,52 @@ const Profile = () => {
                         <h5>Member Since:- {profile.custdoe}</h5>
                     </div>
                         <div className="card" >
-                         
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
                                 <form autoComplete="off">
                                     <h3 className="card-title mt-2">Contact Information</h3><br />
-
                                     <div className="form-group">
                                         <label>Name *</label>
-                                        <input type="Text" className="form-control" value={profile.custname} disabled readonly  id='name' />
+                                        <input type="Text" className="form-control" value={profile.custname} disabled readOnly  id='name' />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Email </label>
-                                            <input type="email" className="form-control" value={profile.custemail} id="email" disabled readonly/>
+                                            <input type="email" className="form-control" value={profile.custemail} id="email" disabled readOnly/>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Mobile </label>
-                                            <input type="number" className="form-control"value={profile.custcontactno} id="mobile"disabled readonly />
+                                            <input type="number" className="form-control"value={profile.custcontactno} id="mobile"disabled readOnly />
                                         </div>
                                     </div>
                                     <h4 className="card-title mt-2">Address</h4><br />
                                     <div className="form-group">
                                         <label>Address 1 </label>
-                                        <input type="Text" className="form-control" value={profile.custadd} id='address1' disabled readonly/>
+                                        <input type="Text" className="form-control" value={profile.custadd} id='address1' disabled readOnly/>
                                     </div>
                                     <div className="form-group">
                                         <label>Address 2</label>
-                                        <input type="Text" className="form-control" value={profile.custadd1} id='address2' disabled readonly />
+                                        <input type="Text" className="form-control" value={profile.custadd1} id='address2' disabled readOnly />
                                     </div>
 
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>Country</label>
-                                            <input type="text" className="form-control" value={profile.custcountry} id='country'disabled readonly />
+                                            <input type="text" className="form-control" value={profile.custcountry} id='country'disabled readOnly />
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>State</label>
-                                            <input type="text" className="form-control" value={profile.custstate} id='city' disabled readonly />
+                                            <input type="text" className="form-control" value={profile.custstate} id='city' disabled readOnly />
 
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6">
                                             <label>City</label>
-                                            <input type="text" className="form-control" value={profile.custcity} id='state' disabled readonly/>
+                                            <input type="text" className="form-control" value={profile.custcity} id='state' disabled readOnly/>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label>Pincode </label>
-                                            <input type="number" className="form-control" value={profile.custpin} id='pincode'disabled readonly/>
+                                            <input type="number" className="form-control" value={profile.custpin} id='pincode'disabled readOnly/>
 
                                         </div>
                                     </div>

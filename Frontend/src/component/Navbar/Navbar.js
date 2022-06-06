@@ -30,7 +30,7 @@ function Navbar() {
             <img src={LOGOimg} style={{ height: "89%" }} alt="dox and box logo"/> &nbsp;Dox and Box</div>
         </div>
         <div className="profilediv" onClick={() => { setProfilecard(!profilecard) }}>
-          <i class="material-icons">person</i>
+          <i className="material-icons">person</i>
           Account</div>
 
         {
@@ -38,7 +38,9 @@ function Navbar() {
             <div className='profileactiondiv' >
               <ul>
                 <a href='/Profile'> <li>Profile</li></a>
+            
                 <a onClick={handleClick}> <li>Logout</li></a>
+
               </ul>
             </div>
             : null

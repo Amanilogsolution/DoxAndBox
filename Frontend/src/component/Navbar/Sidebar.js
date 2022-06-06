@@ -20,21 +20,21 @@ const SideBar = ({ openClass }) => {
       <ul className="navlist">
         <li>
           <a className="menu-item" href="/Dashboard">
-            <i class="material-icons">dashboard</i>
+            <i className="material-icons">dashboard</i>
             &nbsp;Dashboard
           </a>
         </li>
 
         <li>
           <a className="menu-item" href='#'>
-            <i class="material-icons">list</i>
+            <i className="material-icons">list</i>
             &nbsp;Digital Files
           </a>
         </li>
         <li>
           <a className="menu-item" href="#">
 
-            <i class="material-icons">arrow_forward_ios</i>
+            <i className="material-icons">arrow_forward_ios</i>
             <span onClick={handlerecord}>Request</span>
 
 
@@ -54,7 +54,7 @@ const SideBar = ({ openClass }) => {
         <li>
           <a className="menu-item" href='#' >
 
-            <span onClick={handlereport}><i class="material-icons">arrow_forward_ios</i>
+            <span onClick={handlereport}><i className="material-icons">arrow_forward_ios</i>
               Reports</span>
 
           </a>

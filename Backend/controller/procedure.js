@@ -38,6 +38,7 @@ const AddRequest = async (req,res) => {
     const activity = req.body.activity;
     const remark = req.body.remark;
     const entry_by = req.body.entry_by;
+
     console.log(request_type,location,noof_files,request_date,request_time,file_name,retrival_type,delivery_type,noof_pages,onsite,activity,remark,entry_by)
    
     try{
@@ -58,8 +59,8 @@ const AddRequest = async (req,res) => {
         .input('entry_by',entry_by)
         .execute('RMSrequest')
 
-        console.log(result)
-        res.send(result.recordset)
+        // console.log(result.rowsAffected[0])
+        res.send(statusCodes.OK)
     }
     catch (err){
         res.send(err)
