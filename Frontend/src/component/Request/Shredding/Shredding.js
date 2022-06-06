@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../../Navbar/Navbar';
 import {rmsRequest} from '../../../api/index'
 
 function Shredding() {
+    const [mandatoryfield, setMandatoryfield] = useState(false);
+
 
     const handleClick = async(e) => {
         e.preventDefault();
@@ -12,8 +14,13 @@ function Shredding() {
         const onsite = document.getElementById('onSite').value;
         const remark = document.getElementById('remark').value;
 
+        if( !onsite || !request_date){
+            setMandatoryfield(true)
+        }
+        else{
         const result = await rmsRequest('ShreddingRequest','','',request_date,'',file_name,'','',noof_pages,onsite,'',remark,localStorage.getItem('CUST_ID'));
         console.log(result)
+        }
     }
 
     const handlelessthan = () => {
@@ -61,11 +68,11 @@ function Shredding() {
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6" >
-                                            <label>Date Of Shredding *</label>
+                                            <label>Date Of Shredding <span style={{color:"red"}}>*</span></label>
                                             <input type="date" className="form-control" id='dateofShreading' />
                                         </div>
                                         <div className="form-group col-md-6" >
-                                            <label>On Site Shredding *</label>
+                                            <label>On Site Shredding <span style={{color:"red"}}>*</span></label>
                                             <select className="form-control" id='onSite' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Yes</option>
@@ -78,7 +85,11 @@ function Shredding() {
                                         <label>Remarks</label>
                                         <textarea className="form-control" placeholder="Comments" type="text" id='remark' />
                                     </div>
-
+                                    {
+                                        mandatoryfield ?
+                                        <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
+                                        : null
+                                    }
                                     <div className="form-group">
                                     <button type="submit" className="btn btn-primary float-right" onClick={handleClick}>Submit</button>
                                         <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>

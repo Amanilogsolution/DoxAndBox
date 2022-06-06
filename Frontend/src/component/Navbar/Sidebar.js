@@ -67,6 +67,8 @@ const SideBar = ({ openClass }) => {
             <a href="/StockReports"> <li>Stock Report</li></a>
           </ul>
           : null}
+
+          
       </ul>
     </nav>
   );

@@ -18,7 +18,9 @@
   position: absolute;
   left: 3%;
   margin-top: -5px;
+ 
 }
+
 
 aside {
   font-size: 1.5rem;
@@ -105,7 +107,7 @@ aside {
   margin-top: 61px;
   transition: all 1s ease;
   font-size: 2rem;
-  z-index: 1000;
+  z-index: 10;
   box-shadow: 2px 2px 5px gray;
 }
 
@@ -116,14 +118,14 @@ aside {
 
 
 .navlist {
-  padding: 5rem 1rem 5rem 4rem;
+  padding: 1rem 1rem 5rem 4rem;
   color: #000;
 
 }
 
 .navlist li {
   list-style: none;
-  margin: rem 0;
+  margin: 1.5rem 0;
   cursor: pointer;
 
 }

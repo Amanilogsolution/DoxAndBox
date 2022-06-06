@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../../Navbar/Navbar'
 import './RecordRetrival.css';
 import {rmsRequest} from '../../../api/index'
@@ -6,6 +6,7 @@ import {rmsRequest} from '../../../api/index'
 
 
 function RecordRetrival() {
+    const [mandatoryfield, setMandatoryfield] = useState(false);
 
     const handleClick = async(e) => {
         e.preventDefault();
@@ -14,9 +15,13 @@ function RecordRetrival() {
         const delivery_type = document.getElementById('deliverytype').value;
         const request_date = document.getElementById('deliverydate').value;
         const remark = document.getElementById('remark').value;
-
+        if( !file_name || !retrival_type || !delivery_type || !request_date ){
+            setMandatoryfield(true)
+        }
+        else{
         const result = await rmsRequest('RecorRetrival','','',request_date,'',file_name,retrival_type,delivery_type,'','','',remark,localStorage.getItem('CUST_ID'))
         console.log(result)
+        }
     }
 
 
@@ -30,21 +35,19 @@ function RecordRetrival() {
 
                     <div className="col " style={{ margin: "100px auto", width: "600px" }}>
                         <div className="card" >
-                            <header className="card-header">
-                                <h4 className="card-title mt-2">Record Retrival</h4>
-                            </header>
+                           
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
                                 <form>
                                     <h3 className="card-title mt-2">Record Retrival</h3><br />
 
                                     <div className="form-group">
-                                        <label>Search Select Files *</label>
+                                        <label>Search Select Files <span style={{color:"red"}}>*</span></label>
                                         <input placeholder="Files" type="Text" className="form-control" id='filename' />
 
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-4" >
-                                            <label>Type Of Retrival *</label>
+                                            <label>Type Of Retrival <span style={{color:"red"}}>*</span></label>
                                             <select className="form-control" id='typeOfRetrival' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Digital (Scan)</option>
@@ -53,7 +56,7 @@ function RecordRetrival() {
                                             </select>
                                         </div>
                                         <div className="form-group col-md-4" >
-                                            <label>Type Of Delivery *</label>
+                                            <label>Type Of Delivery <span style={{color:"red"}}>*</span></label>
                                             <select className="form-control" id='deliverytype' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Standard</option>
@@ -61,7 +64,7 @@ function RecordRetrival() {
                                             </select>
                                         </div>
                                         <div className="form-group col-md-4">
-                                            <label>Date of Delivery *</label>
+                                            <label>Date of Delivery <span style={{color:"red"}}>*</span></label>
                                             <input type="date" className="form-control" id='deliverydate'
                                             />
                                         </div>
@@ -71,7 +74,11 @@ function RecordRetrival() {
                                         <label>Remarks</label>
                                         <textarea className="form-control" placeholder="Comments" type="text" id='remark' />
                                     </div>
-
+                                    {
+                                        mandatoryfield ?
+                                        <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
+                                        : null
+                                    }
                                     <div className="form-group">
                                         <button type="submit" className="btn btn-primary  float-right" onClick={handleClick}>Submit</button>
 
