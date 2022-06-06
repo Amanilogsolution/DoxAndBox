@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../../Navbar/Navbar'
 import {rmsRequest} from '../../../api/index'
 
 function RecordPickup() {
+    const [mandatoryfield, setMandatoryfield] = useState(false);
+
     const handleClick = async(e) => {
         e.preventDefault();
         const location = document.getElementById('Location').value;
@@ -10,8 +12,13 @@ function RecordPickup() {
         const request_date = document.getElementById('Pickupdate').value;
         const request_time = document.getElementById('pickuptime').value;
         const remark = document.getElementById('remark').value;
+        if( !location || !noof_files || !request_date || !request_time ){
+            setMandatoryfield(true)
+        }
+        else{
         const result = await rmsRequest('RecordPickup',location,noof_files,request_date,request_time,'','','','','','',remark,localStorage.getItem('CUST_ID'))
         console.log(result)
+        }
        
     }
 
@@ -29,20 +36,20 @@ function RecordPickup() {
                         <h3 className="card-title mt-2">Request for record pickup</h3><br/>
 
                             <div className="form-group">
-                                <label>Location *</label>
+                                <label>Location <span style={{color:"red"}}>*</span></label>
                                 <input placeholder="Location, City & PIN etc" type="Text" className="form-control" id='Location' />
                             </div>
                             <div className="form-group">
-                                <label>No of Files * </label>
+                                <label>No of Files <span style={{color:"red"}}>*</span> </label>
                                 <input type="number"placeholder="Total no of Files" className="form-control" id="nooffiles" />
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label>Pickup Date *</label>
+                                    <label>Pickup Date <span style={{color:"red"}}>*</span></label>
                                     <input type="date"  className="form-control" id='Pickupdate' />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label>Pickup Time *</label>
+                                    <label>Pickup Time <span style={{color:"red"}}>*</span></label>
                                     <input type="time" className="form-control" id='pickuptime'
                                     />
 
@@ -53,6 +60,11 @@ function RecordPickup() {
                                 <label>Remarks</label>
                                 <textarea className="form-control" placeholder="Comments" type="text" id='remark' />
                             </div>
+                            {
+                                        mandatoryfield ?
+                                        <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
+                                        : null
+                                    }
                          
                             <div className="form-group" >
                                 <button type="submit" className="btn btn-primary  float-right" onClick={handleClick}>Submit</button>

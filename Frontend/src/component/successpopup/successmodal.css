@@ -1,0 +1,14 @@
+
+.successmodal .outersuccess{
+    height: 300px;
+    width:280px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    border-radius: 15px;
+    box-shadow: 5px 5px 100px gray,
+                5px 5px 10px rgb(82, 82, 82);
+}
