@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import react,{ useState } from 'react';
 import Navbar from '../Navbar/Navbar'
 import './changepass.css'
 
@@ -75,7 +75,7 @@ function Changepassword() {
 
                                     <div className="form-group" >
                                         <button type="submit" className="btn btn-primary float-right mb-5 mt-3" id="subnitbtn">Change</button>
-                                        <button type="submit" className="btn btn-secondary mr-4 float-right mb-5 mt-3">Cancel</button>
+                                        <button  className="btn btn-secondary mr-4 float-right mb-5 mt-3" onClick={()=>{window.location.href='/Dashboard'}}>Cancel</button>
                                     </div>
                                 </form>
                             </article>
