@@ -35,12 +35,14 @@ function Login() {
 								<div className="panel-body">
 									<form name="form" id="form" className="form-horizontal" >
 										<div className="input-group">
+										<span className="input-group-addon"><i className="glyphicon glyphicon-user" /></span>
+		
 											<input id="user" type="email" className="form-control" name="user" placeholder="User" required />
-											<span className="input-group-addon"><i className="glyphicon glyphicon-user" /></span>
 										</div>
 										<div className="input-group">
+										<span className="input-group-addon"><i className="glyphicon glyphicon-lock" /></span>
+
 											<input id="password" type="password" className="form-control" name="password" placeholder="Password" required />
-											<span className="input-group-addon"><i className="glyphicon glyphicon-lock" /></span>
 										</div>
 										<div className="form-group">
 											<button type="submit" onClick={handleClick} className="btn btn-primary"> Log in</button>
