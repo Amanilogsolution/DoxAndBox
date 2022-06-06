@@ -1,17 +1,17 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import Image from '../../assets/whitelogo.png'
-import {UserLogin} from '../../api/index'
+import { UserLogin } from '../../api/index'
 
 
 function Login() {
-	const [showpassword,setShowpassword] = useState(true)
+	const [showpassword, setShowpassword] = useState(true)
 
 	const handleClickChangeicon = () => {
 		setShowpassword(!showpassword)
 	}
 
-	const handleClick = async(e) => {
+	const handleClick = async (e) => {
 		e.preventDefault()
 		const uid_id = document.getElementById('user').value
 		const uid_pass = document.getElementById('password').value
@@ -20,9 +20,9 @@ function Login() {
 		console.log(result)
 		if(result){
 			window.location.href = '/Dashboard'
-			localStorage.setItem('CUST_ID',result.CUST_ID)
+			localStorage.setItem('CUST_ID', result.CUST_ID)
 		}
-		
+
 	}
 	return (
 		<>
@@ -42,15 +42,18 @@ function Login() {
 								<div className="panel-body">
 									<form name="form" id="form" className="form-horizontal" >
 										<div className="input-group">
-										<span className="input-group-addon"><i className="glyphicon glyphicon-user" /></span>
-		
+											<span className="input-group-addon"><i className="glyphicon glyphicon-user" /></span>
+
 											<input id="user" type="email" className="form-control" name="user" placeholder="User" required />
 										</div>
 										<div className="input-group">
-											
-											<span className="input-group-addon"><i onClick={handleClickChangeicon} className="glyphicon glyphicon-lock" /></span>
 
-											<input id="password" type={showpassword?'password':'text'} className="form-control" name="password" placeholder="Password" required />
+											<span className="input-group-addon" onClick={handleClickChangeicon}>
+												{showpassword ? <i className="glyphicon glyphicon-eye-open"></i>
+													: <i className="glyphicon glyphicon-eye-close"></i>}</span>
+
+											<input id="password" type={showpassword ? 'password' : 'text'} className="form-control" name="password" placeholder="Password" required />
+
 										</div>
 										<div className="form-group">
 											<button type="submit" onClick={handleClick} className="btn btn-primary"> Log in</button>
@@ -68,7 +71,7 @@ function Login() {
 					<div>
 					</div>
 				</div>
-				</div>
+			</div>
 		</>
 
 	)

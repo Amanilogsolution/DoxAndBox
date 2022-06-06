@@ -1,25 +1,38 @@
-.dashboardcontainer .dashboardwrapper{
-    width:80%;
-    position:absolute;
-    right:0%;
-    top:0%;
-    margin-top:60px;
-    /* border: 2px solid red;    */
+.dashboardcontainer .dashboardwrapper {
+    width: 80%;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    margin-top: 60px;
 }
 
-.dashboardcontainer .dashboardwrapper .dashboardstatuscard{
-    width:100%;
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard {
+    width: 100%;
     position: relative;
-    margin-top:30px;
+    margin-top: 30px;
     display: flex;
 
 }
 
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body :nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body :nth-child(4) {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body .card-subtitle i {
+    font-size: 16px;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:800px) {
-.dashboardcontainer .dashboardwrapper{
-    width: 100%;
+    .dashboardcontainer .dashboardwrapper {
+        width: 100%;
+    }
 }
-}
-
-
