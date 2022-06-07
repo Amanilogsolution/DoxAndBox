@@ -15,18 +15,27 @@ function Login() {
 
 	const handleClick = async (e) => {
 		e.preventDefault()
-		const uid_id = document.getElementById('user').value
-		const uid_pass = document.getElementById('password').value
-			console.log(uid_id,uid_pass)
-		const result = await UserLogin(uid_id,uid_pass)
-		console.log(result)
-		if(result){
-			window.location.href = '/Dashboard'
-			localStorage.setItem('CUST_ID', result.CUST_ID)
-			localStorage.setItem('Warehouse_ID', result.WHID)
-			localStorage.setItem('User_ID', result.UID)
-		}
+		const uid_id = document.getElementById('user').value;
+		const uid_pass = document.getElementById('password').value;
 
+		if (!uid_id || !uid_pass) {
+			setMandatorydata(true)
+			setShowerror(false)
+		}
+		else{
+			const result = await UserLogin(uid_id, uid_pass)
+			console.log(result)
+			if (result) {
+				window.location.href = '/Dashboard'
+				localStorage.setItem('CUST_ID', result.CUST_ID)
+				localStorage.setItem('Warehouse_ID', result.WHID)
+				localStorage.setItem('User_ID', result.UID)
+			}
+			else{
+				setShowerror(true)
+				setMandatorydata(false)
+			}
+		}
 
 	}
 	return (

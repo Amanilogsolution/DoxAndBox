@@ -1,29 +1,24 @@
 import react, { useState } from 'react';
 import Navbar from '../Navbar/Navbar'
 import './changepass.css'
-import {PasswordChange} from '../../api/index'
+import { PasswordChange } from '../../api/index'
 
 function Changepassword() {
-<<<<<<< HEAD
-    const [mandatoryfield, setMandatoryfield] = useState();
-
-=======
     const [mandatoryfield, setMandatoryfield] = useState(false);
->>>>>>> 58f22b58c9b21e906678a9705ef59f8cf54e2b4f
     const [showpass, setShowpass] = useState(false);
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
 
-    const Changepass =()=>{
+    const Changepass = () => {
 
-        const currentpass= document.getElementById("currentpass").value;
-        const newpass= document.getElementById("newpass").value;
-        const confirmpass= document.getElementById("confirmpass").value;
-        
-        if(!currentpass || !newpass || !confirmpass){
+        const currentpass = document.getElementById("currentpass").value;
+        const newpass = document.getElementById("newpass").value;
+        const confirmpass = document.getElementById("confirmpass").value;
+
+        if (!currentpass || !newpass || !confirmpass) {
             setMandatoryfield(true);
         }
-        else{
+        else {
 
         }
     }
@@ -37,24 +32,24 @@ function Changepassword() {
         setShowpass3(!showpass3);
     }
 
-    const handleClick = async(e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         const uid_id = document.getElementById('userID').value;
         const uid_pass = document.getElementById('userpassword').value;
         const newpassword = document.getElementById('newpassword').value;
         const confirmpassword = document.getElementById('confirmpassword').value;
-        if(newpassword===confirmpassword){
-        const result = await PasswordChange(uid_id,uid_pass,localStorage.getItem('Warehouse_ID'),newpassword);
-        if(result == 'PasswordChanged'){
-            alert('Password Changed Successfully')
-            window.location.href='/Dashboard'
-        }else{
-            alert('Invalid User ID or Password')
-        }
-        console.log(result)
+        if (newpassword === confirmpassword) {
+            const result = await PasswordChange(uid_id, uid_pass, localStorage.getItem('Warehouse_ID'), newpassword);
+            if (result == 'PasswordChanged') {
+                alert('Password Changed Successfully')
+                window.location.href = '/Dashboard'
+            } else {
+                alert('Invalid User ID or Password')
+            }
+            console.log(result)
         }
 
-        else{
+        else {
             alert('Password does not match')
         }
     }
