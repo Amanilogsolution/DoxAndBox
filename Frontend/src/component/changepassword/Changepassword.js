@@ -76,8 +76,8 @@ function Changepassword() {
                                     <div className="input-group">
 
                                         <span className="input-group-addon" onClick={toggleicon}>
-                                            {showpass ? <i className="glyphicon glyphicon-eye-close"></i>
-                                                : <i className="glyphicon glyphicon-eye-open"></i>}</span>
+                                            {showpass ? <i className="glyphicon glyphicon-eye-open"></i>
+                                                : <i className="glyphicon glyphicon-eye-close"></i>}</span>
 
                                         <input id="userpassword" type={showpass ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
@@ -88,8 +88,8 @@ function Changepassword() {
                                     <div className="input-group">
 
                                         <span className="input-group-addon" onClick={toggleicon2}>
-                                            {showpass2 ? <i className="glyphicon glyphicon-eye-close"></i>
-                                                : <i className="glyphicon glyphicon-eye-open"></i>}</span>
+                                            {showpass2 ? <i className="glyphicon glyphicon-eye-open"></i>
+                                                : <i className="glyphicon glyphicon-eye-close"></i>}</span>
 
                                         <input id="newpassword" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
@@ -101,8 +101,8 @@ function Changepassword() {
                                     <div className="input-group">
 
                                         <span className="input-group-addon" onClick={toggleicon3}>
-                                            {showpass3 ? <i className="glyphicon glyphicon-eye-close"></i>
-                                                : <i className="glyphicon glyphicon-eye-open"></i>}</span>
+                                            {showpass3 ? <i className="glyphicon glyphicon-eye-open"></i>
+                                                : <i className="glyphicon glyphicon-eye-close"></i>}</span>
 
                                         <input id="confirmpassword" type={showpass3 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 

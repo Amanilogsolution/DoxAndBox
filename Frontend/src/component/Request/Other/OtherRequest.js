@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Navbar from '../../Navbar/Navbar';
-import Sucessmodal from '../../successpopup/Successmodal';
 import { rmsRequest } from '../../../api/index'
 
 
@@ -27,7 +26,6 @@ function OtherRequest() {
         <>
             <div className="otherrequestcontainer" >
                 <Navbar />
-                {/* <Sucessmodal /> */}
                 <div >
 
                     <div className="col " style={{ margin: "100px auto", width: "630px" }}>
