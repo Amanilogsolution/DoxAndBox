@@ -1,10 +1,11 @@
-import react,{ useState } from 'react';
+import react, { useState } from 'react';
 import Navbar from '../Navbar/Navbar'
 import './changepass.css'
+import {PasswordChange} from '../../api/index'
 
 function Changepassword() {
     const [mandatoryfield, setMandatoryfield] = useState();
-  
+
     const [showpass, setShowpass] = useState(false);
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
@@ -19,6 +20,28 @@ function Changepassword() {
         setShowpass3(!showpass3);
     }
 
+    const handleClick = async(e) => {
+        e.preventDefault();
+        const uid_id = document.getElementById('userID').value;
+        const uid_pass = document.getElementById('userpassword').value;
+        const newpassword = document.getElementById('newpassword').value;
+        const confirmpassword = document.getElementById('confirmpassword').value;
+        if(newpassword===confirmpassword){
+        const result = await PasswordChange(uid_id,uid_pass,localStorage.getItem('Warehouse_ID'),newpassword);
+        if(result == 'PasswordChanged'){
+            alert('Password Changed Successfully')
+            window.location.href='/Dashboard'
+        }else{
+            alert('Invalid User ID or Password')
+        }
+        console.log(result)
+        }
+
+        else{
+            alert('Password does not match')
+        }
+    }
+
     return (
         <>
             <div className="changepasscontainer">
@@ -30,6 +53,19 @@ function Changepassword() {
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
                                 <form className='col'>
                                     <h3 className="card-title mt-2 text-center">Change Password</h3><br />
+
+                                    <label>User Id <span style={{ color: "red" }}>*</span></label>
+
+                                    <div className="input-group">
+
+                                        {/* <span className="input-group-addon" >
+                                            {showpass ? <i className="glyphicon glyphicon-eye-close"></i>
+                                                : <i className="glyphicon glyphicon-eye-open"></i>}</span> */}
+
+                                        <input id="userID" type='text' className="form-control" name="userID" placeholder="UserID" required />
+
+                                    </div><br />
+
                                     <label>Current Password <span style={{ color: "red" }}>*</span></label>
 
                                     <div className="input-group">
@@ -38,9 +74,9 @@ function Changepassword() {
                                             {showpass ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="userpassword" type={showpass ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
-                                    </div><br/>
+                                    </div><br />
 
                                     <label>New Password <span style={{ color: "red" }}>*</span></label>
 
@@ -50,9 +86,9 @@ function Changepassword() {
                                             {showpass2 ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="newpassword" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
-                                    </div><br/>
+                                    </div><br />
 
 
                                     <label>Confirm Password <span style={{ color: "red" }}>*</span></label>
@@ -63,9 +99,9 @@ function Changepassword() {
                                             {showpass3 ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass3 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="confirmpassword" type={showpass3 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
-                                    </div><br/>
+                                    </div><br />
 
                                     {
                                         mandatoryfield ?
@@ -75,8 +111,8 @@ function Changepassword() {
 
 
                                     <div className="form-group" >
-                                        <button type="submit" className="btn btn-primary float-right mb-5 mt-3" id="subnitbtn">Change</button>
-                                        <button  className="btn btn-secondary mr-4 float-right mb-5 mt-3" onClick={()=>{window.location.href='/Dashboard'}}>Cancel</button>
+                                        <button type="submit" className="btn btn-primary float-right mb-5 mt-3" onClick={handleClick} id="subnitbtn">Change Password</button>
+                                        <button className="btn btn-secondary mr-4 float-right mb-5 mt-3" onClick={() => { window.location.href = '/Dashboard' }}>Cancel</button>
                                     </div>
                                 </form>
                             </article>

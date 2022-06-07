@@ -21,6 +21,8 @@ function Login() {
 		if(result){
 			window.location.href = '/Dashboard'
 			localStorage.setItem('CUST_ID', result.CUST_ID)
+			localStorage.setItem('Warehouse_ID', result.WHID)
+			localStorage.setItem('User_ID', result.UID)
 		}
 
 	}

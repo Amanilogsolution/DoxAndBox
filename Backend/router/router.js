@@ -9,6 +9,7 @@ router.post('/reports',procedureController.Data)
 router.post('/request',procedureController.AddRequest)
 
 router.post('/UserLogin',userController.UserLogin)
+router.post('/userpasswordchange',userController.UserPasswordChange)
 router.post('/profiledetails',profileController.ProfileDetails)
 router.post('/reportdata',reportController.Reportdata)
 

@@ -6,6 +6,12 @@ export const UserLogin = async (uid_id,uid_pass) => {
     return axios.post(url, {uid_id,uid_pass}).then(response => response.data).catch(error => console.log(error));
 }
 
+export const PasswordChange = async (uid_id,uid_pass,whid,new_password) => {
+    console.log(uid_id,uid_pass,whid,new_password)
+    const url = `http://localhost:8002/api/userpasswordchange`
+    return axios.post(url, {uid_id,uid_pass,whid,new_password}).then(response => response.data).catch(error => console.log(error));
+}
+
 export const ProfileDetails = async (uid_id) => {
     const url = `http://localhost:8002/api/profiledetails`
     return axios.post(url, {uid_id}).then(response => response.data).catch(error => console.log(error));
