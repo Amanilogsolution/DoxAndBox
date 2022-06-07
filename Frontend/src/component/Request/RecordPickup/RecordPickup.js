@@ -28,12 +28,12 @@ function RecordPickup() {
     <Navbar/>
         <div>
         
-            <div className="col " style={{ margin: "100px auto",width:"600px" }}>
-                <div className="card" >
+            <div className="col " style={{ margin: "100px auto",width:"630px" }}>
+                <div className="card " >
                    
-                    <article className="card-body" style={{boxShadow:"2px 2px 5px #333"}}>
-                        <form>
-                        <h3 className="card-title mt-2">Request for record pickup</h3><br/>
+                    <article className="card-body " style={{boxShadow:"2px 2px 5px #333"}}>
+                        <form style={{margin:"0px 15px 0px 15px"}}>
+                        <h3 className="card-title mt-4">Request for record pickup</h3><br/>
 
                             <div className="form-group">
                                 <label>Location <span style={{color:"red"}}>*</span></label>

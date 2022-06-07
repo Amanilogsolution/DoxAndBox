@@ -9,19 +9,6 @@ function Changepassword() {
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
 
-    const Changepass = () => {
-
-        const currentpass = document.getElementById("currentpass").value;
-        const newpass = document.getElementById("newpass").value;
-        const confirmpass = document.getElementById("confirmpass").value;
-
-        if (!currentpass || !newpass || !confirmpass) {
-            setMandatoryfield(true);
-        }
-        else {
-
-        }
-    }
 
     const toggleicon = () => {
         setShowpass(!showpass);
@@ -39,20 +26,26 @@ function Changepassword() {
         const uid_pass = document.getElementById('userpassword').value;
         const newpassword = document.getElementById('newpassword').value;
         const confirmpassword = document.getElementById('confirmpassword').value;
-        if (newpassword === confirmpassword) {
-            const result = await PasswordChange(uid_id, uid_pass, localStorage.getItem('Warehouse_ID'), newpassword);
-            if (result == 'PasswordChanged') {
-                alert('Password Changed Successfully')
-                window.location.href = '/Dashboard'
-            } else {
-                alert('Invalid User ID or Password')
+
+        if (!uid_id || !uid_pass || !newpassword || !confirmpassword) {
+            setMandatoryfield(true)
+        }
+        else {
+            if (newpassword === confirmpassword) {
+                const result = await PasswordChange(uid_id, uid_pass, localStorage.getItem('Warehouse_ID'), newpassword);
+                if (result == 'PasswordChanged') {
+                    alert('Password Changed Successfully')
+                    window.location.href = '/Dashboard'
+                } else {
+                    alert('Invalid User ID or Password')
+                }
             }
-            console.log(result)
+
+            else {
+                alert('Password does not match')
+            }
         }
 
-        else {
-            alert('Password does not match')
-        }
     }
 
     return (
