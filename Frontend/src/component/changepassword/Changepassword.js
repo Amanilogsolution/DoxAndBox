@@ -3,11 +3,24 @@ import Navbar from '../Navbar/Navbar'
 import './changepass.css'
 
 function Changepassword() {
-    const [mandatoryfield, setMandatoryfield] = useState();
+    const [mandatoryfield, setMandatoryfield] = useState(false);
     const [showpass, setShowpass] = useState(false);
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
 
+    const Changepass =()=>{
+
+        const currentpass= document.getElementById("currentpass").value;
+        const newpass= document.getElementById("newpass").value;
+        const confirmpass= document.getElementById("confirmpass").value;
+        
+        if(!currentpass || !newpass || !confirmpass){
+            setMandatoryfield(true);
+        }
+        else{
+
+        }
+    }
     const toggleicon = () => {
         setShowpass(!showpass);
     }
@@ -37,7 +50,7 @@ function Changepassword() {
                                             {showpass ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="currentpass" type={showpass ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
                                     </div><br/>
 
@@ -49,7 +62,7 @@ function Changepassword() {
                                             {showpass2 ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="newpass" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
                                     </div><br/>
 
@@ -62,7 +75,7 @@ function Changepassword() {
                                             {showpass3 ? <i className="glyphicon glyphicon-eye-close"></i>
                                                 : <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
-                                        <input id="password" type={showpass3 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
+                                        <input id="confirmpass" type={showpass3 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
 
                                     </div><br/>
 
@@ -74,7 +87,7 @@ function Changepassword() {
 
 
                                     <div className="form-group" >
-                                        <button type="submit" className="btn btn-primary float-right mb-5 mt-3" id="subnitbtn">Change</button>
+                                        <button type="submit" className="btn btn-primary float-right mb-5 mt-3" id="subnitbtn" onClick={Changepass}>Change</button>
                                         <button  className="btn btn-secondary mr-4 float-right mb-5 mt-3" onClick={()=>{window.location.href='/Dashboard'}}>Cancel</button>
                                     </div>
                                 </form>
