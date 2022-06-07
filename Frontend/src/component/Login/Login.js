@@ -6,6 +6,8 @@ import { UserLogin } from '../../api/index'
 
 function Login() {
 	const [showpassword, setShowpassword] = useState(true)
+	const [showerror, setShowerror] = useState(false)
+	const [mandatorydata, setMandatorydata] = useState(false)
 
 	const handleClickChangeicon = () => {
 		setShowpassword(!showpassword)
@@ -24,6 +26,7 @@ function Login() {
 			localStorage.setItem('Warehouse_ID', result.WHID)
 			localStorage.setItem('User_ID', result.UID)
 		}
+
 
 	}
 	return (
@@ -51,12 +54,14 @@ function Login() {
 										<div className="input-group">
 
 											<span className="input-group-addon" onClick={handleClickChangeicon}>
-												{showpassword ? <i className="glyphicon glyphicon-eye-open"></i>
-													: <i className="glyphicon glyphicon-eye-close"></i>}</span>
+												{showpassword ? <i className="glyphicon glyphicon-eye-close"></i>
+													: <i className="glyphicon glyphicon-eye-open"></i>}</span>
 
 											<input id="password" type={showpassword ? 'password' : 'text'} className="form-control" name="password" placeholder="Password" required />
 
 										</div>
+										{mandatorydata ? <p style={{ color: "red" }}>Please! Fill the mandatory field...</p> : null}
+										{showerror ? <p style={{ color: "red" }}>Invalid UserId & Password</p> : null}
 										<div className="form-group">
 											<button type="submit" onClick={handleClick} className="btn btn-primary"> Log in</button>
 										</div>
@@ -65,7 +70,7 @@ function Login() {
 							</div>
 
 							<div className="bottomdiv">
-								<p> <a href='#'>forget password ?</a></p>
+								{/* <p> <a href='#'>forget password ?</a></p> */}
 								{/* <p><a href="#">Register</a></p> */}
 							</div>
 						</div>

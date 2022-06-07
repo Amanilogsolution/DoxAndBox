@@ -4,12 +4,29 @@ import './changepass.css'
 import {PasswordChange} from '../../api/index'
 
 function Changepassword() {
+<<<<<<< HEAD
     const [mandatoryfield, setMandatoryfield] = useState();
 
+=======
+    const [mandatoryfield, setMandatoryfield] = useState(false);
+>>>>>>> 58f22b58c9b21e906678a9705ef59f8cf54e2b4f
     const [showpass, setShowpass] = useState(false);
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
 
+    const Changepass =()=>{
+
+        const currentpass= document.getElementById("currentpass").value;
+        const newpass= document.getElementById("newpass").value;
+        const confirmpass= document.getElementById("confirmpass").value;
+        
+        if(!currentpass || !newpass || !confirmpass){
+            setMandatoryfield(true);
+        }
+        else{
+
+        }
+    }
     const toggleicon = () => {
         setShowpass(!showpass);
     }

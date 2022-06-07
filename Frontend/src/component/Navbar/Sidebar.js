@@ -5,15 +5,32 @@ import './navbar.css'
 const SideBar = ({ openClass }) => {
   const [recorddiv, setRecorddiv] = useState(false);
   const [reportdiv, setReportdiv] = useState(false);
+  const [profilrdiv, setProfilrdiv] = useState(false);
 
 
 
   const handlerecord = () => {
     setRecorddiv(!recorddiv);
+    setReportdiv(false);
+    setProfilrdiv(false);
+
   }
 
   const handlereport = () => {
+    setRecorddiv(false);
     setReportdiv(!reportdiv);
+    setProfilrdiv(false);
+  }
+  const handlereprofile = () => {
+    setRecorddiv(false);
+    setProfilrdiv(!profilrdiv);
+    setReportdiv(false);
+    
+  }
+  
+  const handleClick = () => {
+    window.location.href = '/'
+    localStorage.clear();
   }
   return (
     <nav className={openClass === true ? 'closeslidernav slidernav' : ' slidernav'}>
@@ -69,6 +86,23 @@ const SideBar = ({ openClass }) => {
           : null}
 
           
+        <li>
+          <a className="menu-item" href='#' >
+
+            <span onClick={handlereprofile} className="profiletext"><i class="material-icons">arrow_forward_ios</i>
+              Account</span>
+
+          </a>
+        </li>
+        {profilrdiv ?
+          <ul className="innerprofileul" id='reportinnerdiv' >
+            <a href="/Profile"> <li>Profile</li></a>
+            <a href="/Changepassword"> <li>Change Password</li></a>
+            <a href="#" onClick={handleClick}> <li>Logout</li></a>
+          
+          </ul>
+          : null}
+
       </ul>
     </nav>
   );

@@ -143,6 +143,15 @@ aside {
 .navlist ul{
   border-top: 1px solid gray;
 }
+.navlist .innerprofileul{
+  border-top: 1px solid rgb(230, 13, 13);
+  
+}
+.navlist li .profiletext {
+  color:rgb(255, 45, 45);
+}
+
+
 .navlist ul a {
   text-decoration: none;
 
