@@ -67,8 +67,8 @@ function RecordPickup() {
                                     }
                          
                             <div className="form-group" >
-                                <button type="submit" className="btn btn-primary  float-right" onClick={handleClick}>Submit</button>
-                                <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
+                                <button type="submit" className="btn btn-primary  float-right mb-4" onClick={handleClick}>Submit</button>
+                                <button type="submit" className="btn btn-secondary mr-4 float-right mb-4">Reset</button>
                             </div>
                         </form>
                     </article>

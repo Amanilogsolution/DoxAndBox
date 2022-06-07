@@ -27,13 +27,13 @@ function ScanningRequest() {
                 <Navbar />
                 <div>
 
-                    <div className="col " style={{ margin: "100px auto", width: "600px" }}>
+                    <div className="col " style={{ margin: "100px auto", width: "630px" }}>
                         <div className="card" >
                             {/* <header className="card-header">
                         <h4 className="card-title mt-2">Request for Scaning</h4>
                     </header> */}
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
-                                <form>
+                                <form style={{margin:"0px 20px 0px 15px"}}>
                                     <h3 className="card-title mt-2">Request for Scaning</h3><br />
 
 
@@ -67,8 +67,8 @@ function ScanningRequest() {
                                     }
 
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-primary float-right" onClick={handleClick}>Submit</button>
-                                        <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
+                                        <button type="submit" className="btn btn-primary float-right mb-4" onClick={handleClick}>Submit</button>
+                                        <button type="submit" className="btn btn-secondary mr-4 float-right mb-4">Reset</button>
                                     </div>
                                 </form>
                             </article>

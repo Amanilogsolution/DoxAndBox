@@ -81,13 +81,13 @@ function Shredding() {
                 <Navbar />
                 <div>
 
-                    <div className="col " style={{ margin: "100px auto", width: "600px" }}>
+                    <div className="col " style={{ margin: "100px auto", width: "630px" }}>
                         <div className="card" >
                           
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
-                        <h3 className="card-title mt-2">Shredding Request</h3><br/>
+                        <h3 className="card-title mt-4">Shredding Request</h3><br/>
 
-                                <form>
+                                <form style={{margin:"0px 20px 0px 15px"}}>
                                     <div className="radio">
                                         <label>
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked onClick={handlelessthan} />
@@ -138,8 +138,8 @@ function Shredding() {
                                         : null
                                     }
                                     <div className="form-group">
-                                    <button type="submit" className="btn btn-primary float-right" onClick={handleClick}>Submit</button>
-                                        <button type="submit" className="btn btn-secondary mr-4 float-right">Reset</button>
+                                    <button type="submit" className="btn btn-primary float-right mb-4" onClick={handleClick}>Submit</button>
+                                        <button type="submit" className="btn btn-secondary mr-4 float-right mb-4">Reset</button>
                                     </div>
                                 </form>
                             </article>
