@@ -37,10 +37,9 @@ function Navbar() {
           profilecard ?
             <div className='profileactiondiv' >
               <ul>
-                <a href='/Profile'> <li>Profile</li></a>
-            
-                <a onClick={handleClick}> <li>Logout</li></a>
-
+                <a href='/Profile'><li>Profile</li></a>
+                <a href='/Changepassword'><li>Change Password</li></a>
+                <a onClick={handleClick}><li>Logout</li></a>
               </ul>
             </div>
             : null

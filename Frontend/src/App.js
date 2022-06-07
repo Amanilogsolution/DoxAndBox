@@ -13,6 +13,7 @@ import RetrivalReports from './component/Response/RetrivalReport/RetrivalReport'
 import StockReports from './component/Response/StockReports/StockReports';
 import Profile from './component/Profile/Profile';
 import PrivatRoute from './component/HOC/PrivateRoute';
+import Changepassword from './component/changepassword/Changepassword';
 // import PagenotFound from './component/Home/Home';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <PrivatRoute path="/InwardReports"   component={InwardReports}/>
                 <PrivatRoute path="/RetrivalReports"   component={RetrivalReports}/>
                 <PrivatRoute path="/StockReports"   component={StockReports}/>
+                <PrivatRoute path="/Changepassword"   component={Changepassword}/>
 
                 {/* <Route path="*"  exact component={PagenotFound}/> */}
              
