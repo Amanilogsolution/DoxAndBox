@@ -89,9 +89,8 @@ const SideBar = ({ openClass }) => {
         <li>
           <a className="menu-item" href='#' >
 
-            <span onClick={handlereprofile} className="profiletext"><i class="material-icons">arrow_forward_ios</i>
+            <span onClick={handlereprofile} className="profiletext"><i className="material-icons">person</i>
               Account</span>
-
           </a>
         </li>
         {profilrdiv ?

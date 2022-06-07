@@ -4,12 +4,8 @@ import './changepass.css'
 import {PasswordChange} from '../../api/index'
 
 function Changepassword() {
-<<<<<<< HEAD
     const [mandatoryfield, setMandatoryfield] = useState();
 
-=======
-    const [mandatoryfield, setMandatoryfield] = useState(false);
->>>>>>> 58f22b58c9b21e906678a9705ef59f8cf54e2b4f
     const [showpass, setShowpass] = useState(false);
     const [showpass2, setShowpass2] = useState(false);
     const [showpass3, setShowpass3] = useState(false);
@@ -27,6 +23,7 @@ function Changepassword() {
 
         }
     }
+
     const toggleicon = () => {
         setShowpass(!showpass);
     }
@@ -63,8 +60,7 @@ function Changepassword() {
         <>
             <div className="changepasscontainer">
                 <Navbar />
-                <div >
-
+                <div>
                     <div className="col " style={{ margin: "100px auto", width: "620px" }}>
                         <div className="card" >
                             <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
