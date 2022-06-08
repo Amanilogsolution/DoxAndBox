@@ -1,50 +1,50 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../../Navbar/Navbar'
 import './RecordRetrival.css';
-import {rmsRequest,ReportData} from '../../../api/index'
- import Select from 'react-select';
+import { rmsRequest, ReportData } from '../../../api/index'
+import Select from 'react-select';
 
 
 function RecordRetrival() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
-    const [data,setData] = useState([]);
-    const [selectfiles,setSelectFiles] = useState([]);
+    const [data, setData] = useState([]);
+    const [selectfiles, setSelectFiles] = useState([]);
 
 
     useEffect(() => {
-    const data = async() => {
-        const result = await ReportData(localStorage.getItem('CUST_ID'))
-        console.log(result)
-        setData(result)
-    }
-    data()
-    },[])
+        const data = async () => {
+            const result = await ReportData(localStorage.getItem('CUST_ID'))
+            console.log(result)
+            setData(result)
+        }
+        data()
+    }, [])
 
-    let options = data.map((ele)=>{
-        return{value:ele.fileno,label:ele.fileno};
+    let options = data.map((ele) => {
+        return { value: ele.fileno, label: ele.fileno };
     })
 
-    const handleClick = async(e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         // const file_name = document.getElementById('filename').value;
         const retrival_type = document.getElementById('typeOfRetrival').value;
         const delivery_type = document.getElementById('deliverytype').value;
         const request_date = document.getElementById('deliverydate').value;
         const remark = document.getElementById('remark').value;
-        if( !retrival_type || !delivery_type || !request_date ){
+        if (!retrival_type || !delivery_type || !request_date) {
             setMandatoryfield(true)
         }
-        else{
+        else {
 
 
-            selectfiles.forEach(async(datas)=>{
-                const file_name  = datas.value
+            selectfiles.forEach(async (datas) => {
+                const file_name = datas.value
 
-               const result =   await rmsRequest('RecorRetrival','','',request_date,'',file_name,retrival_type,delivery_type,'','','',remark,localStorage.getItem('CUST_ID'))
-                
-               
+                const result = await rmsRequest('RecorRetrival', '', '', request_date, '', file_name, retrival_type, delivery_type, '', '', '', remark, localStorage.getItem('CUST_ID'))
+
+
             })
-            window.location.href='/Dashboard'
+            window.location.href = '/Dashboard'
 
         }
     }
@@ -62,26 +62,29 @@ function RecordRetrival() {
                 <Navbar />
                 <div>
 
-                    <div className="col " style={{ margin: "100px auto", width: "630px" }}>
-                        <div className="card" >
-                         
-                            <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
-                                <form style={{margin:"0px 20px 0px 15px"}}>
-                                    <h3 className="card-title mt-4">Record Retrival</h3><br />
+                    <div className="col " style={{ margin: "80px auto", width: "630px" }}>
+                        <div className="card" style={{ boxShadow: "2px 2px 5px #333" }}>
+                            <header className="card-header" style={{ background: "rgba(0,0,0,0.2)" }}>
+                                <h4 className="card-title mt-2" >Record Retrival</h4>
+                            </header>
+                            <article className="card-body" >
+                                <form style={{ margin: "0px 20px 0px 15px" }}>
+                                    {/* <h3 className="card-title mt-4">Record Retrival</h3> */}
+                                    <br />
 
                                     <div className="form-group">
                                         <label>Search Select Files *</label>
                                         {/* <input placeholder="Files" type="Text" className="form-control" id='filename' /> */}
-                                        <Select 
-                                        options={options}
-                                        isMulti={true}
-                                        onChange={handleChange} 
+                                        <Select
+                                            options={options}
+                                            isMulti={true}
+                                            onChange={handleChange}
                                         />
 
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-4" >
-                                            <label>Type Of Retrival <span style={{color:"red"}}>*</span></label>
+                                            <label>Type Of Retrival <span style={{ color: "red" }}>*</span></label>
                                             <select className="form-control" id='typeOfRetrival' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Digital (Scan)</option>
@@ -90,7 +93,7 @@ function RecordRetrival() {
                                             </select>
                                         </div>
                                         <div className="form-group col-md-4" >
-                                            <label>Type Of Delivery <span style={{color:"red"}}>*</span></label>
+                                            <label>Type Of Delivery <span style={{ color: "red" }}>*</span></label>
                                             <select className="form-control" id='deliverytype' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Standard</option>
@@ -98,7 +101,7 @@ function RecordRetrival() {
                                             </select>
                                         </div>
                                         <div className="form-group col-md-4">
-                                            <label>Date of Delivery <span style={{color:"red"}}>*</span></label>
+                                            <label>Date of Delivery <span style={{ color: "red" }}>*</span></label>
                                             <input type="date" className="form-control" id='deliverydate'
                                             />
                                         </div>
@@ -110,8 +113,8 @@ function RecordRetrival() {
                                     </div>
                                     {
                                         mandatoryfield ?
-                                        <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
-                                        : null
+                                            <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
+                                            : null
                                     }
                                     <div className="form-group">
                                         <button type="submit" className="btn btn-primary  float-right mb-4" onClick={handleClick}>Submit</button>

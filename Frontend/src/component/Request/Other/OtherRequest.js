@@ -28,11 +28,15 @@ function OtherRequest() {
                 <Navbar />
                 <div >
 
-                    <div className="col " style={{ margin: "100px auto", width: "630px" }}>
-                        <div className="card" >
-                            <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
+                    <div className="col " style={{ margin: "75px auto", width: "630px" }}>
+                        <div className="card" style={{ boxShadow: "2px 2px 5px #333" }}>
+                        <header className="card-header" style={{ background: "rgba(0,0,0,0.2)" }}>
+                                <h4 className="card-title mt-2" >Other Request</h4>
+                            </header>
+                            <article className="card-body" >
                                 <form style={{margin:"0px 20px 0px 15px"}}>
-                                    <h3 className="card-title mt-4">Other Request</h3><br />
+                                    {/* <h3 className="card-title mt-4">Other Request</h3><br /> */}
+                                    <br/>
 
                                     <div className="form-group">
                                         <label>Activity <span style={{ color: "red" }}>*</span></label>

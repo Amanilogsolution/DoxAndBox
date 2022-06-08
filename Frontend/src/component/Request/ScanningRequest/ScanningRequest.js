@@ -1,24 +1,24 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../Navbar/Navbar';
-import {rmsRequest} from '../../../api/index'
+import { rmsRequest } from '../../../api/index'
 
 
 function ScanningRequest() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
 
 
-    const handleClick = async(e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         const noof_pages = document.getElementById('scanned_pages').value;
         const onsite = document.getElementById('onSite').value;
         const request_date = document.getElementById('dateofScanning').value;
         const remark = document.getElementById('remark').value;
-        if(!noof_pages || !onsite || !request_date){
+        if (!noof_pages || !onsite || !request_date) {
             setMandatoryfield(true)
         }
-        else{
-        const result = await rmsRequest('ScanningRequest','','',request_date,'','','','',noof_pages,onsite,'',remark,localStorage.getItem('CUST_ID'))
-        console.log(result)
+        else {
+            const result = await rmsRequest('ScanningRequest', '', '', request_date, '', '', '', '', noof_pages, onsite, '', remark, localStorage.getItem('CUST_ID'))
+            console.log(result)
         }
     }
     return (
@@ -27,27 +27,28 @@ function ScanningRequest() {
                 <Navbar />
                 <div>
 
-                    <div className="col " style={{ margin: "100px auto", width: "630px" }}>
-                        <div className="card" >
-                            {/* <header className="card-header">
-                        <h4 className="card-title mt-2">Request for Scaning</h4>
-                    </header> */}
-                            <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
-                                <form style={{margin:"0px 20px 0px 15px"}}>
-                                    <h3 className="card-title mt-2">Request for Scaning</h3><br />
+                    <div className="col " style={{ margin: "80px auto", width: "630px" }}>
+                        <div className="card" style={{ boxShadow: "2px 2px 5px #333" }} >
+                            <header className="card-header" style={{ background: "rgba(0,0,0,0.2)" }}>
+                                <h4 className="card-title mt-2" >Request for Scaning</h4>
+                            </header>
+                            <article className="card-body" >
+                                <form style={{ margin: "0px 20px 0px 15px" }}>
+                                    {/* <h3 className="card-title mt-2">Request for Scaning</h3> */}
+                                    <br />
 
 
                                     <div className="form-group">
-                                        <label>Total no of Pages to be Scanned <span style={{color:"red"}}>*</span></label>
+                                        <label>Total no of Pages to be Scanned <span style={{ color: "red" }}>*</span></label>
                                         <input type="number" className="form-control" id='scanned_pages' />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-md-6" >
-                                            <label>Date Of Scanning <span style={{color:"red"}}>*</span></label>
+                                            <label>Date Of Scanning <span style={{ color: "red" }}>*</span></label>
                                             <input type="date" className="form-control" id='dateofScanning' />
                                         </div>
                                         <div className="form-group col-md-6" >
-                                            <label>On Site Scan <span style={{color:"red"}}>*</span></label>
+                                            <label>On Site Scan <span style={{ color: "red" }}>*</span></label>
                                             <select className="form-control" id='onSite' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Yes</option>
@@ -62,8 +63,8 @@ function ScanningRequest() {
                                     </div>
                                     {
                                         mandatoryfield ?
-                                        <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
-                                        : null
+                                            <p style={{ color: "red" }}>Please! fill the mandatory field.</p>
+                                            : null
                                     }
 
                                     <div className="form-group">

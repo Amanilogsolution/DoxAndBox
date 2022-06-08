@@ -53,28 +53,22 @@ function Changepassword() {
             <div className="changepasscontainer">
                 <Navbar />
                 <div>
-                    <div className="col " style={{ margin: "100px auto", width: "620px" }}>
-                        <div className="card" >
-                            <article className="card-body" style={{ boxShadow: "2px 2px 5px #333" }}>
+                    <div className="col " style={{ margin: "70px auto", width: "620px" }}>
+                        <div className="card" style={{ boxShadow: "2px 2px 5px #333" }}>
+                            <header className="card-header" style={{ background: "rgba(0,0,0,0.2)" }}>
+                                <h4 className="card-title mt-2" >Generator Log Book Entry</h4>
+                            </header>
+                            <article className="card-body">
                                 <form className='col'>
-                                    <h3 className="card-title mt-2 text-center">Change Password</h3><br />
+                                    <br />
 
                                     <label>User Id <span style={{ color: "red" }}>*</span></label>
 
                                     <div className="input-group">
-
-                                        {/* <span className="input-group-addon" >
-                                            {showpass ? <i className="glyphicon glyphicon-eye-close"></i>
-                                                : <i className="glyphicon glyphicon-eye-open"></i>}</span> */}
-
                                         <input id="userID" type='text' className="form-control" name="userID" placeholder="UserID" required />
-
                                     </div><br />
-
                                     <label>Current Password <span style={{ color: "red" }}>*</span></label>
-
                                     <div className="input-group">
-
                                         <span className="input-group-addon" onClick={toggleicon}>
                                             {showpass ? <i className="glyphicon glyphicon-eye-open"></i>
                                                 : <i className="glyphicon glyphicon-eye-close"></i>}</span>
@@ -92,10 +86,7 @@ function Changepassword() {
                                                 : <i className="glyphicon glyphicon-eye-close"></i>}</span>
 
                                         <input id="newpassword" type={showpass2 ? 'text' : 'password'} className="form-control" name="password" placeholder="Password" required />
-
                                     </div><br />
-
-
                                     <label>Confirm Password <span style={{ color: "red" }}>*</span></label>
 
                                     <div className="input-group">
