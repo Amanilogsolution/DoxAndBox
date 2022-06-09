@@ -1,4 +1,4 @@
-/* ###################  Navbar css Start ##########################*/
+/* ###################  Navbar css Start ########################## */
 
 .topnav {
   height: 60px;
@@ -89,17 +89,17 @@ aside {
 }
 
 
-/* ###################  Navbar css Start ##########################*/
+/* ###################  Navbar css Start ########################## */
 
 
-/* ###################  sidebar css Start ##########################*/
+/* ###################  sidebar css Start ########################## */
 
 
 .slidernav {
   height: 100%;
   width: 250px;
   background: #fff;
-  position: absolute;
+  position: absolute;       
   top: 0;
   left: 0;
   margin-top: 61px;
@@ -113,12 +113,9 @@ aside {
   left: -100%;
 }
 
-
-
 .navlist {
   padding: 1rem 1rem 5rem 4rem;
   color: #000;
-
 }
 
 .navlist li {
