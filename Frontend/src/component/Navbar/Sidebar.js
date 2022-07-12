@@ -42,12 +42,12 @@ const SideBar = ({ openClass }) => {
           </a>
         </li>
 
-        <li>
+        {/* <li>
           <a className="menu-item" href='#'>
             <i className="material-icons">list</i>
             &nbsp;Digital Files
           </a>
-        </li>
+        </li> */}
         <li>
           <a className="menu-item" href="#">
 
