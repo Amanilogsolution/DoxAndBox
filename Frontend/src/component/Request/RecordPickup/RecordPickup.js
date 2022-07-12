@@ -29,7 +29,6 @@ function RecordPickup() {
         else{
             const  mailresponse = await Mail('RecordPickup',message);
         const result = await rmsRequest('RecordPickup',location,noof_files,request_date,request_time,'','','','','','',remark,localStorage.getItem('CUST_ID'))
-        console.log(result)
         }
 
     }

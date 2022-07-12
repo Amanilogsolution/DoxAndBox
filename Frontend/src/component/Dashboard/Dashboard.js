@@ -55,6 +55,38 @@ function Dashboard() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className='dashboardstatuscard dashboardcards2' >
+                                <div className="col" style={{visibility:"hidden"}}>
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <h4 className="card-title">Inbound Box</h4>
+                                            <hr style={{ height: "4px", borderWidth: "0", background: "orange" }} />
+                                            <h6 className="card-subtitle" ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files in current month" >info</i>&nbsp;Current Month 0</h6>
+                                            <h6 className="card-subtitle " ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files">info</i>&nbsp;Life time 0</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <h4 className="card-title">Inbound Box</h4>
+                                            <hr style={{ height: "4px", borderWidth: "0", background: "orange" }} />
+                                            <h6 className="card-subtitle" ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files in current month" >info</i>&nbsp;Current Month 0</h6>
+                                            <h6 className="card-subtitle " ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files">info</i>&nbsp;Life time 0</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <h4 className="card-title">Outbound Box</h4>
+                                            <hr style={{ height: "4px", borderWidth: "0", background: "rgb(85, 96, 255)" }} />
+                                            <h6 className="card-subtitle" ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files in current month" >info</i>&nbsp;Current Month 0</h6>
+                                            <h6 className="card-subtitle " ><i className="material-icons" delay="0" data-toggle="tooltip" title="Total Number of Outbound files">info</i>&nbsp;Life time 0</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>

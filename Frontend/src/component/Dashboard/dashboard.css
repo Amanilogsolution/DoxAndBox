@@ -1,5 +1,5 @@
 .dashboardcontainer .dashboardwrapper {
-    width: 80%;
+    width: 100%;
     position: absolute;
     right: 0%;
     top: 0%;
@@ -11,7 +11,11 @@
     position: relative;
     margin-top: 30px;
     display: flex;
+}
 
+.dashboardcontainer .dashboardwrapper .dashboardcards2{
+  justify-content: right;
+  align-items: right;
 }
 
 .dashboardcontainer .dashboardwrapper .dashboardstatuscard .container .row .col .card .card-body :nth-child(3) {

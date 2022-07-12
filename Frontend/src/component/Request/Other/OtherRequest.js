@@ -18,8 +18,6 @@ function OtherRequest() {
         }
         else {
             const result = await rmsRequest('OtherRequest', '', '', request_date, '', '', '', '', '', onsite, activity, remark, localStorage.getItem('CUST_ID'));
-            console.log(result)
-
         }
     }
     return (

@@ -18,7 +18,6 @@ function ScanningRequest() {
         }
         else {
             const result = await rmsRequest('ScanningRequest', '', '', request_date, '', '', '', '', noof_pages, onsite, '', remark, localStorage.getItem('CUST_ID'))
-            console.log(result)
         }
     }
     return (

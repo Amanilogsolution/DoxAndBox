@@ -14,7 +14,6 @@ function RecordRetrival() {
     useEffect(() => {
         const data = async () => {
             const result = await ReportData(localStorage.getItem('CUST_ID'))
-            console.log(result)
             setData(result)
         }
         data()

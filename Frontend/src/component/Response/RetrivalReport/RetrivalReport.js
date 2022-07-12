@@ -46,7 +46,6 @@ function RetrivalReport() {
             // You can await here
             const response = await rmsReports('Retrival',localStorage.getItem('CUST_ID'))
             setData(response)
-            console.log(response)
 
           }
           fetchData();
@@ -59,7 +58,7 @@ function RetrivalReport() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
-    <div className="container reportdata" >
+    <div className=" reportdata" >
       <h4 className="text-dark mn-3">Retrival Report</h4>
     <div className="DataTable">
     <DataTableExtensions {...tableData} >

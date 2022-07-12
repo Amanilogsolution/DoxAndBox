@@ -70,7 +70,6 @@ function InwardReports() {
       // You can await here
       const response = await rmsReports('Inward', localStorage.getItem('CUST_ID'))
       setData(response)
-      console.log(response)
 
     }
     fetchData();
@@ -83,7 +82,7 @@ function InwardReports() {
   return (
     <div className="InvoicesinProgress">
       <Navbar />
-      <div className="container reportdata"  >
+      <div className=" reportdata"  >
         <h4 className="text-dark">Inward Report</h4>
         <div className="DataTable">
           <DataTableExtensions {...tableData} >

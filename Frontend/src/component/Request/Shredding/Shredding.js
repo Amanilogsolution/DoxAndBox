@@ -13,7 +13,6 @@ function Shredding() {
     useEffect(() => {
         const data = async () => {
             const result = await ReportData(localStorage.getItem('CUST_ID'))
-            console.log(result)
             setData(result)
         }
         data()
@@ -40,7 +39,6 @@ function Shredding() {
 
             }
             else {
-                console.log('hello  ')
 
                 selectfiles.forEach(async (datas) => {
                     const file_name = datas.value

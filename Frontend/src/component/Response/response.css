@@ -1,6 +1,14 @@
+.InvoicesinProgress{
+    /* border: 2px solid green; */
+}
 .reportdata{
-    width:80%;
-    margin-right: 0%;
+    width:97%;
+    /* margin: 15px 30px;*/
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    /* border: 2px solid red; */
 }
 
 
@@ -22,6 +30,7 @@
 @media screen and (max-width:800px){
     .reportdata{
         width:100%;
+        margin: 0;
     }
 }
 
