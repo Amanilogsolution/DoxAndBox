@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../../Navbar/Navbar'
-import { rmsRequest } from '../../../api/index'
+import {rmsRequest,Mail} from '../../../api/index'
 
 function RecordPickup() {
     const [mandatoryfield, setMandatoryfield] = useState(false);
@@ -12,12 +12,24 @@ function RecordPickup() {
         const request_date = document.getElementById('Pickupdate').value;
         const request_time = document.getElementById('pickuptime').value;
         const remark = document.getElementById('remark').value;
-        if (!location || !noof_files || !request_date || !request_time) {
+
+        const message= {
+            Location:location,
+            NoofFiles:noof_files,
+            date:request_date,
+            time:request_time,
+            Remark:remark,
+            requestType:'RecordPickup'
+            
+        }
+
+        if( !location || !noof_files || !request_date || !request_time ){
             setMandatoryfield(true)
         }
-        else {
-            const result = await rmsRequest('RecordPickup', location, noof_files, request_date, request_time, '', '', '', '', '', '', remark, localStorage.getItem('CUST_ID'))
-            console.log(result)
+        else{
+            const  mailresponse = await Mail('RecordPickup',message);
+        const result = await rmsRequest('RecordPickup',location,noof_files,request_date,request_time,'','','','','','',remark,localStorage.getItem('CUST_ID'))
+        console.log(result)
         }
 
     }

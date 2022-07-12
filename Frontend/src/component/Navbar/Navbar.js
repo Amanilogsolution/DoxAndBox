@@ -5,7 +5,7 @@ import LOGOimg from '../../assets/doxlogo.png'
 
 
 function Navbar() {
-  const [on, setOn] = React.useState(false);
+  const [on, setOn] = React.useState(true);
   const [profilecard, setProfilecard] = React.useState(false);
 
   const handleClick = () => {

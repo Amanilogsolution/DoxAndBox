@@ -30,6 +30,7 @@ function Login() {
 				localStorage.setItem('CUST_ID', result.CUST_ID)
 				localStorage.setItem('Warehouse_ID', result.WHID)
 				localStorage.setItem('User_ID', result.UID)
+				localStorage.setItem('User_Name', result.cust_name)
 			}
 			else{
 				setShowerror(true)
