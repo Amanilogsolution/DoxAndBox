@@ -59,12 +59,17 @@ const columns = [
 
 function StockReports() {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     
     useEffect(() => {
 
         async function fetchData() {
             const response = await rmsReports('Stock',localStorage.getItem('CUST_ID'))
             setData(response)
+            if(response){
+              setLoading(false);
+            }
 
           }
           fetchData();
@@ -77,6 +82,10 @@ function StockReports() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
+     {loading?(
+                  <h1 style={{display:"flex",justifyContent:"center",alignItems:"center" }}>Loading...</h1>
+
+      ):(
     <div className=" reportdata" >
       <h4 className="text-dark mn-3">Stock Report</h4>
     <div className="DataTable">
@@ -89,6 +98,7 @@ function StockReports() {
      </DataTableExtensions>
      </div>
      </div>
+      )}
     </div>
   )
 }

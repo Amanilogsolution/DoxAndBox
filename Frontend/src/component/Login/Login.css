@@ -6,6 +6,9 @@
 }
 .logincontainer .container #loginbox {
     margin-top: 30px;
+    width: 500px;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 
 .logincontainer .container  #loginbox>div:first-child {
@@ -76,4 +79,19 @@
     text-decoration: none;
     color: #fff;
     font-size: 16px;
+}
+
+
+@media  screen and (max-width:500px) 
+{
+    .logincontainer .container #loginbox {
+        width:90%;
+    }    
+}
+
+@media  screen and (max-width:400px) 
+{
+    .logincontainer .container #loginbox {
+        width:98%;
+    }    
 }

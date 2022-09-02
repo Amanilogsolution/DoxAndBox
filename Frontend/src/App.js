@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react'
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Login from './component/Login/Login';
 import Dashboard from './component/Dashboard/Dashboard';
@@ -17,13 +18,15 @@ import Changepassword from './component/changepassword/Changepassword';
 // import PagenotFound from './component/Home/Home';
 
 function App() {
+
+
   return (
     <>
         <Router>
    
                 <Route path="/" exact component={Login}/>
                 <PrivatRoute path="/Profile" exact component={Profile}/>
-                <PrivatRoute path="/Dashboard"   component={Dashboard}/>
+                <PrivatRoute path="/Dashboard"   component={Dashboard} />
                 <PrivatRoute path="/RecordPickup"   component={RecordPickup}/>
                 <PrivatRoute path="/RecordRetrival"  component={RecordRetrival}/>
                 <PrivatRoute path="/ScanningRequest"   component={ScanningRequest}/>

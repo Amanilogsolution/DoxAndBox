@@ -39,6 +39,8 @@ const columns = [
 
 function RetrivalReport() {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     
     useEffect(() => {
 
@@ -46,6 +48,9 @@ function RetrivalReport() {
             // You can await here
             const response = await rmsReports('Retrival',localStorage.getItem('CUST_ID'))
             setData(response)
+            if(response){
+              setLoading(false);
+            }
 
           }
           fetchData();
@@ -58,6 +63,10 @@ function RetrivalReport() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
+     {loading?(
+                  <h1 style={{display:"flex",justifyContent:"center",alignItems:"center" }}>Loading...</h1>
+
+      ):(
     <div className=" reportdata" >
       <h4 className="text-dark mn-3">Retrival Report</h4>
     <div className="DataTable">
@@ -70,6 +79,7 @@ function RetrivalReport() {
      </DataTableExtensions>
      </div>
      </div>
+      )}
     </div>
   )
 }

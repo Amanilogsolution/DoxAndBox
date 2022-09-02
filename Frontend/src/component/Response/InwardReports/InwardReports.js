@@ -63,6 +63,8 @@ const columns = [
 
 function InwardReports() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
 
@@ -70,6 +72,9 @@ function InwardReports() {
       // You can await here
       const response = await rmsReports('Inward', localStorage.getItem('CUST_ID'))
       setData(response)
+      if(response){
+        setLoading(false);
+      }
 
     }
     fetchData();
@@ -82,6 +87,10 @@ function InwardReports() {
   return (
     <div className="InvoicesinProgress">
       <Navbar />
+      {loading?(
+                  <h1 style={{display:"flex",justifyContent:"center",alignItems:"center" }}>Loading...</h1>
+
+      ):(
       <div className=" reportdata"  >
         <h4 className="text-dark">Inward Report</h4>
         <div className="DataTable">
@@ -94,6 +103,7 @@ function InwardReports() {
           </DataTableExtensions>
         </div>
       </div>
+      )}
     </div>
   )
 }

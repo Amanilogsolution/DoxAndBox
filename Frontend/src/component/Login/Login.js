@@ -41,10 +41,10 @@ function Login() {
 	}
 	return (
 		<>
-			<div className="logincontainer">
+			<div className="logincontainer" >
 				<div className="container" >
-					<div className="navcontainer" >
-						<div id="loginbox" className="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3" >
+					<div className="navcontainer">
+						<div id="loginbox" className="mainbox " >
 							<div className="row">
 								<div className="iconmelon" >
 									<img src={Image} alt="logo" />

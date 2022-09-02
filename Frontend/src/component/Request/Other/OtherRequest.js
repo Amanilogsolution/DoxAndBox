@@ -43,11 +43,11 @@ function OtherRequest() {
 
                                     <div className="form-row">
                                         <div className="form-group col-md-6" >
-                                            <label>Date Of Shredding <span style={{ color: "red" }}>*</span></label>
+                                            <label>Date <span style={{ color: "red" }}>*</span></label>
                                             <input type="date" className="form-control" id='dateofShreading' />
                                         </div>
                                         <div className="form-group col-md-6" >
-                                            <label>On Site Shredding <span style={{ color: "red" }}>*</span></label>
+                                            <label>On Site <span style={{ color: "red" }}>*</span></label>
                                             <select className="form-control" id='onSite' style={{ height: "32px" }}>
                                                 <option defaultValue hidden>Choose ...</option>
                                                 <option>Yes</option>

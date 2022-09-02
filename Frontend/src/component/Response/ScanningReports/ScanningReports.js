@@ -43,6 +43,8 @@ const columns = [
 
 function ScanningReports() {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     
     useEffect(() => {
 
@@ -50,6 +52,9 @@ function ScanningReports() {
             // You can await here
             const response = await rmsReports('Scanning',localStorage.getItem('CUST_ID'))
             setData(response)
+            if(response){
+              setLoading(false);
+            }
 
           }
           fetchData();
@@ -62,6 +67,10 @@ function ScanningReports() {
   return (
     <div className="InvoicesinProgress">
      <Navbar/>
+     {loading?(
+                  <h1 style={{display:"flex",justifyContent:"center",alignItems:"center" }}>Loading...</h1>
+
+      ):(
     <div className=" reportdata" >
       <h4 className="text-dark mn-3">Scanning Report</h4>
     <div className="DataTable">
@@ -74,6 +83,7 @@ function ScanningReports() {
      </DataTableExtensions>
      </div>
      </div>
+      )}
     </div>
   )
 }
